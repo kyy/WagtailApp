@@ -172,4 +172,6 @@ WAGTAILSEARCH_BACKENDS = {
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
 WAGTAILADMIN_BASE_URL = "http://example.com"
 
+WAGTAILIMAGES_MAX_UPLOAD_SIZE = 30 * 1024 * 1024
+
 
