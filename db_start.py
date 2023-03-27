@@ -6,7 +6,7 @@ import datetime
 
 
 """
-Autoconfiguration 'DATABASES' for settings 'base.py and saving secure password in .env'
+Autoconfiguration 'DATABASES' for settings 'dev.py and saving secure password in .env'
 """
 
 

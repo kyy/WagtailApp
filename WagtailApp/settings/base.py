@@ -12,10 +12,6 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-from config_reader import config
-from db_start import go
-
-# Engine of database
 
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -94,11 +90,11 @@ WSGI_APPLICATION = "WagtailApp.wsgi.application"
 
 DATABASES = {
     'default': {
-        'ENGINE': go.engine,
-        'NAME': go.name,
-        'USER': go.user,
-        'PASSWORD': config.db_password.get_secret_value(),
-        'HOST': 'localhost',
+        'ENGINE': '',
+        'NAME': '',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
     },
 }
 

@@ -1,4 +1,6 @@
 from .base import *
+from config_reader import config
+from db_start import go
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -23,6 +25,16 @@ MIDDLEWARE += [
 INTERNAL_IPS = [
     '127.0.0.1',
 ]
+
+DATABASES = {
+    'default': {
+        'ENGINE': go.engine,
+        'NAME': go.name,
+        'USER': go.user,
+        'PASSWORD': config.db_password.get_secret_value(),
+        'HOST': 'localhost',
+    },
+}
 
 
 try:
