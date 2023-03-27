@@ -5,7 +5,7 @@ from wagtail.images import get_image_model
 
 
 @receiver(post_save, sender=get_image_model())
-def optimize_image_storage_by_resize_images_on_upload(sender, instance, created=False, **kwargs):
+def resize_images_on_upload(sender, instance, created=False, **kwargs):
     if (instance.width and instance.height) > 2000:
         if created:
             croped_image = instance.get_rendition('max-2000x2000|jpegquality-80')
