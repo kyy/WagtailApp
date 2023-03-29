@@ -7,6 +7,9 @@ from django.shortcuts import get_object_or_404
 
 @receiver(post_save, sender=get_image_model())
 def resize_images_on_upload_or_edit(sender, instance, **kwargs):
+    """
+    Resize, and change quality of images on upload and edit
+    """
     if (instance.width and instance.height) > 2000 or instance.file_size > 500_000:
         print('signal')
         if get_object_or_404(sender, pk=instance.pk):

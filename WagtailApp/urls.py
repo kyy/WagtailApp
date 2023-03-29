@@ -21,6 +21,9 @@ if settings.DEBUG:
     from django.conf.urls.static import static
     from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
+    # django-browser-reload
+    urlpatterns += (path("__reload__/", include("django_browser_reload.urls")),)
+
     # debug-toolbar DjDT
     urlpatterns += (path('__debug__/', include(debug_toolbar.urls)),)
 
