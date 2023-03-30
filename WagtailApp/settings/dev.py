@@ -3,7 +3,7 @@ from config_reader import config
 from db_start import go
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "django-insecure-_&18^x8frjf97mi6+s8=s@c(jfhn6too3a2en8p@op=!2e_hu("
