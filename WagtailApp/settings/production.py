@@ -1,5 +1,6 @@
 from .base import *
 
+""" dont forget to delete auto-reload browser scripts in 'WagtailApp/templates/base.html' template """
 
 DEBUG = False
 

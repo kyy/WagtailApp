@@ -24,11 +24,14 @@ class DB:
 # db constants, enter your params
 db = {
     'mysql': DB(name='wagtail', user='root', engine='django.db.backends.mysql'),
-    'postgres': DB(name='', user='', engine='django.db.backends.postgresql')
+    'postgres': DB(name='', user='', engine='django.db.backends.postgresql'),
+    'sqlite3': DB(name='', user='', engine='django.db.backends.sqlite3'),
+    'oracle': DB(name='', user='', engine='django.db.backends.oracle'),
       }
 
-mysql, postgres = db['mysql'], db['postgres']
+mysql, postgres, sqlite3, oracle = db['mysql'], db['postgres'], db['sqlite3'], db['oracle']
 
+# choose engine ()
 go = mysql    # <-- imported in 'DATABASES' 'dev.py'
 
 
