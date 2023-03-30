@@ -9,6 +9,12 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
+
+        {# Global stylesheets #}
+
+        {# Global javascript #}
+        <script src="{% static 'js/fw/jquery-3.6.4.min.js' %}"></script>
+
         <title>
             {% block title %}
             {% if page.seo_title %}{{ page.seo_title }}{% else %}{{ page.title }}{% endif %}
@@ -28,24 +34,31 @@
         <base target="_blank">
         {% endif %}
 
-        {# Global stylesheets #}
-        <link rel="stylesheet" type="text/css" href="{% static 'css/WagtailApp.css' %}">
 
-        {% block extra_css %}
-        {# Override this in templates to add extra stylesheets #}
-        {% endblock %}
     </head>
 
     <body class="{% block body_class %}{% endblock %}">
-        {% wagtailuserbar %}
 
-        {% block content %}{% endblock %}
-
-        {# Global javascript #}
-        <script type="text/javascript" src="{% static 'js/WagtailApp.js' %}"></script>
+    {% block extra_css %}
+        {# Override this in templates to add extra stylesheets #}
+        {% endblock %}
 
         {% block extra_js %}
         {# Override this in templates to add extra javascript #}
         {% endblock %}
+
+        {% wagtailuserbar %}
+        {% include 'snippets/burger.html' %}
+        <div class="section">
+            <div class="container">
+        {% include 'snippets/breadcrumbs.html' %}
+        {% block content %}
+
+        {% endblock %}
+        </div>
+        </div>
+
+        {% include 'snippets/footer.html' %}
+
     </body>
 </html>

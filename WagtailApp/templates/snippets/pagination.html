@@ -1,0 +1,52 @@
+{% load i18n %}
+{% spaceless %}
+
+    {% if objects.paginator.num_pages > 2  %}
+<div class="field is-grouped is-grouped-multiline is-grouped-centered buttons are-small">
+    {% if objects.has_previous %}
+   {% if objects.number > 2 %}
+   <p class="control">
+      <a class="button is-info is-outlined" href="?page=1" title='Первая'>1</a>
+   </p>
+   {% if objects.number > 3 %}
+
+   {% endif %}
+   {% endif %}
+        <p class="control">
+      <a class="button is-info is-outlined" href="?page={{ objects.previous_page_number }}" title='Предыдущая'><i class="fa-solid fa-chevron-left"></i></a>
+   </p>
+   {% endif %}
+
+
+   {% for num in objects.paginator.page_range %}
+   {% if objects.number == num %}
+   <p class="control">
+      <a class="button is-info is-outlined has-background-info is-static has-text-white has-text-weight-bold" href="?page={{ num }}" title='{{ num }}'>{{ num }}/{{ objects.paginator.num_pages }}</a>
+   </p>
+   {% elif num > objects.number and num < objects.number %}
+   <p class="control">
+      <a class="button is-info is-outlined" href="?page={{ num }}" title='{{ num }}'>{{ num }}</a>
+   </p>
+   {% endif %}
+   {% endfor %}
+
+
+   {% if objects.has_next %}
+         <p class="control ">
+      <a class="button is-info is-outlined" href="?page={{ objects.next_page_number }}" title=Следующая><i class="fa-solid fa-chevron-right"></i></a>
+   </p>
+   {% if objects.number < objects.paginator.num_pages|add:'-2' %}
+
+   <p class="control ">
+      <a class="button is-info is-outlined" href="?page={{ objects.paginator.num_pages }}" title='{{ objects.paginator.num_pages }}'>{{ objects.paginator.num_pages }}</a>
+   </p>
+   {% elif objects.number < objects.paginator.num_pages|add:'-1' %}
+   <p class="control ">
+      <a class="button is-info is-outlined" href="?page={{ objects.paginator.num_pages }}" title='{{ objects.paginator.num_pages }}'>{{ objects.paginator.num_pages }}</a>
+   </p>
+   {% endif %}
+
+   {% endif %}
+</div>
+     {% endif %}
+{% endspaceless %}
