@@ -28,3 +28,5 @@ def resize_images_on_upload_or_edit(sender, instance, **kwargs):
                     os.replace(croped_file, original_file)
             except IOError:
                 pass
+
+

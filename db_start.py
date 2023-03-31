@@ -29,9 +29,9 @@ db = {
     'oracle': DB(name='', user='', engine='django.db.backends.oracle'),
       }
 
-mysql, postgres, sqlite3, oracle = db['mysql'], db['postgres'], db['sqlite3'], db['oracle']
+mysql, postgres, sqlite3, oracle = [i for i in db.values()]
 
-# choose engine ()
+# choose engine (mysql, postgres, sqlite3, oracle)
 go = mysql    # <-- imported in 'DATABASES' 'dev.py'
 
 
