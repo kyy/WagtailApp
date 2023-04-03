@@ -52,7 +52,7 @@ def mysql_server_create_db():
                     print(f'--> MySQL server: {connection.get_server_info()}')
                     db_name = mysql.name
                     with connection.cursor() as cursor:
-                        cursor.execute(f"""CREATE DATABASE {db_name};""")
+                        cursor.execute(f"""CREATE DATABASE IF NOT EXISTS {db_name} ;""")
                         print(f'--> {db_name} is created')
                     with open("env.txt", "w+") as my_file:
                         my_file.write(f'db_password = {password}')
@@ -74,6 +74,7 @@ def mysql_server_create_db():
             sys.exit()
     except KeyboardInterrupt:
         print('\n--> Script aborted')
+
 
 if __name__ == '__main__':
     mysql_server_create_db()
