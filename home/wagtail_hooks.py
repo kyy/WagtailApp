@@ -11,7 +11,6 @@ def resize_images_on_upload_or_edit(sender, instance, **kwargs):
     Resize, and change quality of images on upload and edit
     """
     if (instance.width and instance.height) > 2000 or instance.file_size > 500_000:
-        print('signal')
         if get_object_or_404(sender, pk=instance.pk):
             croped_image = instance.get_rendition('max-2000x2000|jpegquality-80')
             try:
@@ -28,5 +27,3 @@ def resize_images_on_upload_or_edit(sender, instance, **kwargs):
                     os.replace(croped_file, original_file)
             except IOError:
                 pass
-
-
