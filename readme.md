@@ -15,14 +15,15 @@ python -m venv /path/to/new/virtual/environment
 ```
 2. Create Git repo.
 3. Install MySQL Server: https://dev.mysql.com/downloads/installer/>
-4. Configure 'db' (name, login) in 'db_start.py' for creating MySQL database and run script.
+4. RUN in project folder:
+```python 
+pip install -r requirements.txt
+```
+5. Configure 'db' (name, login) in 'db_start.py' for creating MySQL database and run script.
 ```python 
 python db_start.py    
 ```
-5. RUN in project folder:
-```python 
-python pip install -r requirements.txt
-```
+
 
 ```python 
 python manage.py migrate
