@@ -3,58 +3,55 @@
 {% load django_browser_reload %}
 {% django_browser_reload_script %}
 <!DOCTYPE html>
-<html class="no-js" lang="en">
-   <head>
-       <meta charset="utf-8" />
-       {# Global stylesheets #}
-       <link href="{% static 'css/fw/foundation.css' %}" rel="stylesheet" type="text/css" />
-       <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    {# Global stylesheets #}
+    <link href="{% static 'css/fw/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
 
-       {# Global javascript #}
-        <script src="{% static 'js/fw/jquery-3.6.4.min.js' %}"></script>
-        <script src="{% static 'fontawesomefree/js/all.min.js' %}"></script>
-        <script src="{% static 'js/fw/what-input.js' %}"></script>
-        <script src="{% static 'js/fw/foundation.min.js' %}"></script>
-        <script>
-          $(document).foundation();
-        </script>
-       <title>
-         {% block title %}
-         {% if page.seo_title %}{{ page.seo_title }}{% else %}{{ page.title }}{% endif %}
-         {% endblock %}
-         {% block title_suffix %}
-         {% wagtail_site as current_site %}
-         {% if current_site and current_site.site_name %}- {{ current_site.site_name }}{% endif %}
-         {% endblock %}
-      </title>
+    {# Global javascript #}
+    <script src="{% static 'js/fw/jquery-3.6.4.min.js' %}"></script>
+    <script src="{% static 'fontawesomefree/js/all.min.js' %}"></script>
+    <script src="{% static 'js/fw/bootstrap.bundle.min.js' %}"></script>
 
-      {# Favicon #}
-      <link rel="icon" type="image/x-icon" href="{% static 'media/images/favicon.ico' %}">
-      {% if page.search_description %}
-      <meta name="description" content="{{ page.search_description }}" />
-      {% endif %}
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      {# Force all links in the live preview panel to be opened in a new tab #}
-      {% if request.in_preview_panel %}
-      <base target="_blank">
-      {% endif %}
-   </head>
-   <body class="{% block body_class %}{% endblock %}">
-      {% block extra_css %}
-      {# add extra stylesheets #}
-      {% endblock %}
-      {% block extra_js %}
-      {# add extra javascript #}
-      {% endblock %}
-      {% wagtailuserbar %}
-      {% include 'snippets/burger.html' %}
-      <div class="section">
-         <div class="container">
-            {% include 'snippets/breadcrumbs.html' %}
-            {% block content %}
-            {% endblock %}
-         </div>
-      </div>
-      {% include 'snippets/footer.html' %}
-   </body>
+    <title>
+        {% block title %}
+            {% if page.seo_title %}{{ page.seo_title }}{% else %}{{ page.title }}{% endif %}
+        {% endblock %}
+        {% block title_suffix %}
+            {% wagtail_site as current_site %}
+            {% if current_site and current_site.site_name %}- {{ current_site.site_name }}{% endif %}
+        {% endblock %}
+    </title>
+
+    {# Favicon #}
+    <link rel="icon" type="image/x-icon" href="{% static 'media/images/favicon.ico' %}">
+    {% if page.search_description %}
+        <meta name="description" content="{{ page.search_description }}"/>
+    {% endif %}
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    {# Force all links in the live preview panel to be opened in a new tab #}
+    {% if request.in_preview_panel %}
+        <base target="_blank">
+    {% endif %}
+</head>
+<body class="{% block body_class %}{% endblock %}">
+{% block extra_css %}
+    {# add extra stylesheets #}
+{% endblock %}
+{% block extra_js %}
+    {# add extra javascript #}
+{% endblock %}
+{% wagtailuserbar %}
+{% include 'snippets/burger.html' %}
+<div class="section">
+    <div class="container">
+        {% include 'snippets/breadcrumbs.html' %}
+        {% block content %}
+        {% endblock %}
+    </div>
+</div>
+{% include 'snippets/footer.html' %}
+</body>
 </html>

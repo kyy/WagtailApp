@@ -1,58 +1,146 @@
-{% load static %}
+<!-- Remove the container if you want to extend the Footer to full width. -->
+<div class="container my-5">
+    <!-- Footer -->
+    <footer
+            class="text-center text-lg-start text-white"
+            style="background-color: #45526e"
+    >
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+            <!-- Section: Links -->
+            <section class="">
+                <!--Grid row-->
+                <div class="row">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">
+                            Company name
+                        </h6>
+                        <p>
+                            Here you can use rows and columns to organize your footer
+                            content. Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit.
+                        </p>
+                    </div>
+                    <!-- Grid column -->
 
-{% block extra_css %}
-      <link href="{% static 'css/footer.css' %}" rel="stylesheet" type="text/css" />
-{% endblock %}
+                    <hr class="w-100 clearfix d-md-none"/>
 
-<div class="three-column-footer-contact-form-container">
-  <footer class="three-column-footer-contact-form" data-equalizer data-equalize-by-row="true">
-    <div class="footer-left" data-equalizer-watch>
-      <div class="baseline">
-        <div class="contact-details">
-          <h6>Contact details</h6>
-          <p><i class="fa fa-phone fa-lg" aria-hidden="true"></i> 01234 567890</p>
-          <p><a href="#"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></i> Contact us</a></p>
-          <p><i class="fa fa-map-marker fa-lg" aria-hidden="true"></i> Street, City, County, Country</p>
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
+                        <p>
+                            <a class="text-white">MDBootstrap</a>
+                        </p>
+                        <p>
+                            <a class="text-white">MDWordPress</a>
+                        </p>
+                        <p>
+                            <a class="text-white">BrandFlow</a>
+                        </p>
+                        <p>
+                            <a class="text-white">Bootstrap Angular</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <hr class="w-100 clearfix d-md-none"/>
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">
+                            Useful links
+                        </h6>
+                        <p>
+                            <a class="text-white">Your Account</a>
+                        </p>
+                        <p>
+                            <a class="text-white">Become an Affiliate</a>
+                        </p>
+                        <p>
+                            <a class="text-white">Shipping Rates</a>
+                        </p>
+                        <p>
+                            <a class="text-white">Help</a>
+                        </p>
+                    </div>
+
+                    <!-- Grid column -->
+                    <hr class="w-100 clearfix d-md-none"/>
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+                        <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+                        <p><i class="fas fa-envelope mr-3"></i> info@gmail.com</p>
+                        <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+                        <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!--Grid row-->
+            </section>
+            <!-- Section: Links -->
+
+            <hr class="my-3">
+
+            <!-- Section: Copyright -->
+            <section class="p-3 pt-0">
+                <div class="row d-flex align-items-center">
+                    <!-- Grid column -->
+                    <div class="col-md-7 col-lg-8 text-center text-md-start">
+                        <!-- Copyright -->
+                        <div class="p-3">
+                            © 2020 Copyright:
+                            <a class="text-white" href="https://mdbootstrap.com/"
+                            >MDBootstrap.com</a
+                            >
+                        </div>
+                        <!-- Copyright -->
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
+                        <!-- Facebook -->
+                        <a
+                                class="btn btn-outline-light btn-floating m-1"
+                                class="text-white"
+                                role="button"
+                        ><i class="fab fa-facebook-f"></i
+                        ></a>
+
+                        <!-- Twitter -->
+                        <a
+                                class="btn btn-outline-light btn-floating m-1"
+                                class="text-white"
+                                role="button"
+                        ><i class="fab fa-twitter"></i
+                        ></a>
+
+                        <!-- Google -->
+                        <a
+                                class="btn btn-outline-light btn-floating m-1"
+                                class="text-white"
+                                role="button"
+                        ><i class="fab fa-google"></i
+                        ></a>
+
+                        <!-- Instagram -->
+                        <a
+                                class="btn btn-outline-light btn-floating m-1"
+                                class="text-white"
+                                role="button"
+                        ><i class="fab fa-instagram"></i
+                        ></a>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+            </section>
+            <!-- Section: Copyright -->
         </div>
-        <div class="newsletter">
-          <div class="input-group">
-            <h6>Sign up for our newsletter</h6>
-            <input class="input-group-field" type="email" placeholder="Email address">
-          </div>
-          <a class="button expanded" href="#">Submit</a>
-        </div>
-      </div>
-     </div>
-    <div class="footer-center" data-equalizer-watch>
-      <div class="baseline">
-        <div class="newsletter">
-          <h6>Contact form</h6>
-          <div class="input-group">
-            <input class="input-group-field" type="text" placeholder="Name">
-            <input class="input-group-field" type="email" placeholder="Email address">
-            <textarea placeholder="Message"></textarea>
-          </div>
-          <a class="button expanded" href="#">Submit</a>
-        </div>
-      </div>
-    </div>
-    <div class="footer-right" data-equalizer-watch>
-      <div class="baseline">
-        <img class="thumbnail" src="https://placehold.it/100">
-        <h6>Opening times</h6>
-        <p>Mon - Fri 9:00am - 5:00pm</p>
-        <p>Sat 9:00am - 8:00pm</p>
-        <p>Sun 9:00am - 4:00pm</p>
-        <div class="social">
-          <i class="fa-brands fa-square-facebook fa-2x" aria-hidden="true"></i>
-          <i class="fa-brands fa-square-twitter fa-2x" aria-hidden="true"></i>
-          <i class="fa-brands fa-square-google-plus fa-2x" aria-hidden="true"></i>
-          <i class="fa-brands fa-linkedin fa-2x" aria-hidden="true"></i>
-        </div>
-      </div>
-    </div>
-  </footer>
+        <!-- Grid container -->
+    </footer>
+    <!-- Footer -->
 </div>
-
-
-
+<!-- End of .container -->
