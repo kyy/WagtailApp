@@ -8,11 +8,11 @@
        <meta charset="utf-8" />
        {# Global stylesheets #}
        <link href="{% static 'css/fw/foundation.css' %}" rel="stylesheet" type="text/css" />
-       <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
-       <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
-       <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
+       <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
+
        {# Global javascript #}
         <script src="{% static 'js/fw/jquery-3.6.4.min.js' %}"></script>
+        <script src="{% static 'fontawesomefree/js/all.min.js' %}"></script>
         <script src="{% static 'js/fw/what-input.js' %}"></script>
         <script src="{% static 'js/fw/foundation.min.js' %}"></script>
         <script>
@@ -27,6 +27,7 @@
          {% if current_site and current_site.site_name %}- {{ current_site.site_name }}{% endif %}
          {% endblock %}
       </title>
+
       {# Favicon #}
       <link rel="icon" type="image/x-icon" href="{% static 'media/images/favicon.ico' %}">
       {% if page.search_description %}
