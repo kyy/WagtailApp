@@ -7,6 +7,8 @@
   - fontawesome-free 5.15.4: <https://pypi.org/project/fontawesome-free/>
   - mysql-connector-python 8.0.32: <https://pypi.org/project/mysql-connector-python/> 
   - mysqlclient 2.1.1: <https://pypi.org/project/mysqlclient/> 
+  - wagtail-color-panel 1.4.1: <https://pypi.org/project/wagtail-color-panel/>
+  - wagtailmedia 0.13.0: <https://pypi.org/project/wagtailmedia/>
 
 ### INSTALLING:
 1. Create virtual env. 
