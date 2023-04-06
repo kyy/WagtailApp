@@ -12,3 +12,5 @@ pre-commit
 mysql-connector-python
 mysqlclient
 fontawesomefree
+wagtailmedia
+wagtail-color-panel
