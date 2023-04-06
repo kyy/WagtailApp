@@ -7,14 +7,12 @@
 <head>
     <meta charset="utf-8"/>
     {# Global stylesheets #}
-    <link href="{% static 'css/fw/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
     <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
-
+    <link href="{% static 'css/fw/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
     {# Global javascript #}
     <script src="{% static 'js/fw/jquery-3.6.4.min.js' %}"></script>
     <script src="{% static 'fontawesomefree/js/all.min.js' %}"></script>
     <script src="{% static 'js/fw/bootstrap.bundle.min.js' %}"></script>
-
     <title>
         {% block title %}
             {% if page.seo_title %}{{ page.seo_title }}{% else %}{{ page.title }}{% endif %}
@@ -24,7 +22,6 @@
             {% if current_site and current_site.site_name %}- {{ current_site.site_name }}{% endif %}
         {% endblock %}
     </title>
-
     {# Favicon #}
     <link rel="icon" type="image/x-icon" href="{% static 'media/images/favicon.ico' %}">
     {% if page.search_description %}
@@ -44,14 +41,12 @@
     {# add extra javascript #}
 {% endblock %}
 {% wagtailuserbar %}
-{% include 'snippets/burger.html' %}
-<div class="section">
-    <div class="container">
-        {% include 'snippets/breadcrumbs.html' %}
-        {% block content %}
-        {% endblock %}
-    </div>
-</div>
+<div class="container">
+    {% include 'snippets/burger.html' %}
+    {% include 'snippets/breadcrumbs.html' %}
+    {% block content %}
+    {% endblock %}
 {% include 'snippets/footer.html' %}
+</div>
 </body>
 </html>
