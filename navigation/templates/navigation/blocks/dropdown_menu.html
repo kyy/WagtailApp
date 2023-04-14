@@ -4,8 +4,16 @@
     </a>
     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
         {% for item in value.menu_items %}
-            {% if item.value.is_live %}     {# провряем опубликована лми страница #}
-             <li><a class="dropdown-item" href="{{ item.value.href}}">{{ item.value.title}}</a></li>
+            {% if item.value.is_live %}     {# if published #}
+                <li>
+                    <a class="dropdown-item" href="{{ item.value.href }}">
+                        {% if item.value.title %}    {# if name of menu #}
+                            {{ item.value.title }}
+                        {% else %}
+                            {{ item.value.title_page }}
+                        {% endif %}
+                    </a>
+                </li>
             {% endif %}
         {% endfor %}
     </ul>

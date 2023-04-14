@@ -20,7 +20,11 @@ class NavigationMenuSetting(BaseSiteSetting):
     )
 
     panels = [
-        FieldPanel("menu_items"),
+        FieldPanel("menu_items",
+            heading='Конструктор меню',
+            help_text='Категории меню не будут отображаться если страница не опубликована.\n'
+                      'При необходимости можно указать свои имена, по умолчанию используется заголовок стрницы'
+                   ),
     ]
 
     class Meta:

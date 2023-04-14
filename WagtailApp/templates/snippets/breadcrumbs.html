@@ -1,9 +1,15 @@
-
+{% if self.get_ancestors|length > 1 %}
 <nav class="navbar navbar-expand-lg bg-light border-top border-bottom">
   <ol class="breadcrumb px-5 bg-light me-5 mt-3">
-    <li class="breadcrumb-item"><a class="text-reset" href="#">Home</a></li>
-    <li class="breadcrumb-item"><a class="text-reset" href="#">Library</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Data</li>
+      {% for page in self.get_ancestors %}
+          {% if page.is_root == False %}
+    <li class="breadcrumb-item"><a class="text-reset" href="{{ page.url }}">{{ page.title }}</a></li>
+          {% endif %}
+      {% endfor %}
+  <li class="breadcrumb-item active">{{ self.title }}</li>
   </ol>
 </nav>
+{% endif %}
+
+
 
