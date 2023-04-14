@@ -36,7 +36,8 @@ class NavigationPageChooserStructValue(StructValue):
 
     def is_live(self):
         is_live = self.get("page").live
-        return is_live
+        is_show_in_menus = self.get("page").show_in_menus
+        return all([is_live, is_show_in_menus])
 
     def title_page(self):
         title_page = self.get("page").title

@@ -8,6 +8,6 @@ from modelcluster.models import ClusterableModel
 
 
 class HomePage(Page):
-    pass
+    show_in_menus_default = True
 
 

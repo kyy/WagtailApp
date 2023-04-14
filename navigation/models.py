@@ -1,3 +1,4 @@
+from django.utils.safestring import mark_safe
 from wagtail.admin.panels import FieldPanel
 from wagtail.contrib.settings.models import BaseSiteSetting, register_setting
 from wagtail.fields import StreamField
@@ -21,9 +22,11 @@ class NavigationMenuSetting(BaseSiteSetting):
 
     panels = [
         FieldPanel("menu_items",
-            heading='Конструктор меню',
-            help_text='Категории меню не будут отображаться если страница не опубликована.\n'
-                      'При необходимости можно указать свои имена, по умолчанию используется заголовок стрницы'
+                   heading=mark_safe(
+                       'Конструктор меню'
+                        '<div class="help"><p>Категории меню не будут отображаться если страница не опубликована.</p>'
+                        '<p>Категорию меню можно также отключить без редактирования, убрав галочку <i>"Показывать в меню"</i></p>'
+                        '<p>на вкладке <i>"Продвижение"</i>-><i>"Для меню сайта"</i> в параметрах страницы.</p></div>'),
                    ),
     ]
 
