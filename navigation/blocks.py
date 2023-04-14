@@ -34,6 +34,10 @@ class NavigationPageChooserStructValue(StructValue):
         href = f"{ url }#{ anchor }" if anchor else url
         return href
 
+    def is_live(self):
+        is_live = self.get("page").live
+        return is_live
+
 
 class NavigationPageChooserBlock(wagtail_blocks.StructBlock):
     title = wagtail_blocks.CharBlock()
