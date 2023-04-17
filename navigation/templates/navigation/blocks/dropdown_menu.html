@@ -13,10 +13,10 @@
                                 <a class="dropdown-item" href="{{ item.value.href }}">
                                     {% if item.value.title %}    {# if name of menu #}
                                         {{ item.value.title }}  {% if item.value.is_external %}
-                                        <i class="{% include ico_ext_link %}"></i> {% endif %}
+                                        {% include ico_ext_link %} {% endif %}
                                     {% else %}
                                         {{ item.value.page.title }}  {% if item.value.is_external %}
-                                        <i class="{% include ico_ext_link %}"></i> {% endif %}
+                                        {% include ico_ext_link %} {% endif %}
                                     {% endif %}
                                 </a>
                             </li>

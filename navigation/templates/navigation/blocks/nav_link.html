@@ -5,11 +5,11 @@
                 {% if not value.live %}     {# if not hide regular menu #}
                     {% if value.title %}    {# if name of menu #}
                         {{ value.title }}  {% if value.is_external %}
-                        <i class="{% include ico_ext_link %}"></i>
+                        {% include ico_ext_link %}
                     {% endif %}
                     {% else %}
                         {{ self.page.title }}  {% if value.is_external %}
-                        <i class="{% include ico_ext_link %}"></i>
+                        {% include ico_ext_link %}
                     {% endif %}
                     {% endif %}
                 {% endif %}
