@@ -1,3 +1,4 @@
+from django.utils.safestring import mark_safe
 from wagtail import blocks as wagtail_blocks
 from wagtail.blocks import StructValue
 
@@ -9,6 +10,9 @@ class NavigationExternalLinkStructValue(StructValue):
         anchor = self.get("anchor")
         href = f"{ url }#{ anchor }" if anchor else url
         return href
+
+    def is_external(self):
+        return True
 
     def is_live(self):
         return True

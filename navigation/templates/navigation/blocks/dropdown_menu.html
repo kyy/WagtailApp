@@ -10,9 +10,9 @@
                 <li>
                     <a class="dropdown-item" href="{{ item.value.href }}">
                         {% if item.value.title %}    {# if name of menu #}
-                            {{ item.value.title }}
+                            {{ item.value.title }}  {% if item.value.is_external %} <i class="fa-solid fa-square-arrow-up-right"></i> {% endif %}
                         {% else %}
-                            {{ item.value.page.title }}
+                            {{ item.value.page.title }}  {% if item.value.is_external %} <i class="fa-solid fa-square-arrow-up-right"></i> {% endif %}
                         {% endif %}
                     </a>
                 </li>

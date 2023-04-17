@@ -3,9 +3,9 @@
         {% if value.is_live %}    {# if page published and show_in_menus is True #}
             {% if not value.live %}     {# if not hide regular menu #}
                 {% if value.title %}    {# if name of menu #}
-                    {{ value.title }}
+                    {{ value.title }}  {% if value.is_external %} <i class="fa-solid fa-square-arrow-up-right"></i> {% endif %}
                 {% else %}
-                    {{ self.page.title }}
+                    {{ self.page.title }}  {% if value.is_external %} <i class="fa-solid fa-square-arrow-up-right"></i> {% endif %}
                 {% endif %}
             {% endif %}
         {% endif %}
