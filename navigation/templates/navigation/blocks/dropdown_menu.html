@@ -5,7 +5,7 @@
     </a>
     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
         {% for item in value.menu_items %}
-            {% if item.value.page.live and item.value.page.show_in_menus %}     {# if page published and show_in_menus is True #}
+            {% if item.value.is_live %}     {# if page published and show_in_menus is True #}
                 {% if not item.value.live %}  {# if not hide regular menu #}
                 <li>
                     <a class="dropdown-item" href="{{ item.value.href }}">

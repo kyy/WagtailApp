@@ -2,7 +2,6 @@ from wagtail import blocks as wagtail_blocks
 from wagtail.blocks import StructValue
 
 
-
 class NavigationExternalLinkStructValue(StructValue):
     def href(self):
         """Construct a URL with anchor if exists, otherwise use URL"""
@@ -11,9 +10,20 @@ class NavigationExternalLinkStructValue(StructValue):
         href = f"{ url }#{ anchor }" if anchor else url
         return href
 
+    def is_live(self):
+        return True
+
 
 class NavigationExternalLinkBlock(wagtail_blocks.StructBlock):
-    title = wagtail_blocks.CharBlock()
+    title = wagtail_blocks.CharBlock(
+        required=True,
+    )
+    live = wagtail_blocks.BooleanBlock(
+        default=False,
+        required=False,
+        label='Скрыть меню',
+        help_text='Включение/отключение меню',
+    )
     url = wagtail_blocks.URLBlock()
     anchor = wagtail_blocks.CharBlock(
         required=False,
@@ -22,7 +32,7 @@ class NavigationExternalLinkBlock(wagtail_blocks.StructBlock):
 
     class Meta:
         template = "navigation/blocks/nav_link.html"
-        label = "Внутренняя ссылка"
+        label = "Внешняя ссылка"
         icon = "link-external"
         value_class = NavigationExternalLinkStructValue
 
@@ -34,6 +44,11 @@ class NavigationPageChooserStructValue(StructValue):
         anchor = self.get("anchor")
         href = f"{ url }#{ anchor }" if anchor else url
         return href
+
+    def is_live(self):
+        live = self.get("page").live
+        show_in_menu = self.get("page").show_in_menus
+        return all([live, show_in_menu])
 
 
 class NavigationPageChooserBlock(wagtail_blocks.StructBlock):
@@ -50,14 +65,12 @@ class NavigationPageChooserBlock(wagtail_blocks.StructBlock):
         required=False,
         label='Скрыть меню',
         help_text='Включение/отключение отображения категории меню',
-
     )
     anchor = wagtail_blocks.CharBlock(
         required=False,
         label='Якорь',
         help_text="Для ссылки на определенные элементы страницы, введите текст привязки без символа «#».",
     )
-
 
     class Meta:
         template = "navigation/blocks/nav_link.html"
