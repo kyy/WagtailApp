@@ -1,4 +1,3 @@
-from django.utils.safestring import mark_safe
 from wagtail import blocks as wagtail_blocks
 from wagtail.blocks import StructValue
 
@@ -8,7 +7,7 @@ class NavigationExternalLinkStructValue(StructValue):
         """Construct a URL with anchor if exists, otherwise use URL"""
         url = self.get("url")
         anchor = self.get("anchor")
-        href = f"{ url }#{ anchor }" if anchor else url
+        href = f"{url}#{anchor}" if anchor else url
         return href
 
     def is_external(self):
@@ -46,7 +45,7 @@ class NavigationPageChooserStructValue(StructValue):
         """Construct a URL with anchor if exists, otherwise use URL"""
         url = self.get("page").url
         anchor = self.get("anchor")
-        href = f"{ url }#{ anchor }" if anchor else url
+        href = f"{url}#{anchor}" if anchor else url
         return href
 
     def is_live(self):

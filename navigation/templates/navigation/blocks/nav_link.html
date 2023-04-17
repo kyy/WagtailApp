@@ -1,13 +1,19 @@
-<li class="nav-item">
-    <a href="{{ value.href }}" class="nav-link">
-        {% if value.is_live %}    {# if page published and show_in_menus is True #}
-            {% if not value.live %}     {# if not hide regular menu #}
-                {% if value.title %}    {# if name of menu #}
-                    {{ value.title }}  {% if value.is_external %} <i class="fa-solid fa-square-arrow-up-right"></i> {% endif %}
-                {% else %}
-                    {{ self.page.title }}  {% if value.is_external %} <i class="fa-solid fa-square-arrow-up-right"></i> {% endif %}
+{% with ico_ext_link='navigation/blocks/snippets/ico_external_link.html' %}
+    <li class="nav-item">
+        <a href="{{ value.href }}" class="nav-link">
+            {% if value.is_live %}    {# if page published and show_in_menus is True #}
+                {% if not value.live %}     {# if not hide regular menu #}
+                    {% if value.title %}    {# if name of menu #}
+                        {{ value.title }}  {% if value.is_external %}
+                        <i class="{% include ico_ext_link %}"></i>
+                    {% endif %}
+                    {% else %}
+                        {{ self.page.title }}  {% if value.is_external %}
+                        <i class="{% include ico_ext_link %}"></i>
+                    {% endif %}
+                    {% endif %}
                 {% endif %}
             {% endif %}
-        {% endif %}
-    </a>
-</li>
+        </a>
+    </li>
+{% endwith %}

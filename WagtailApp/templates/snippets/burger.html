@@ -1,22 +1,22 @@
-{% load static wagtailsettings_tags %}
-
+{% load static wagtailsettings_tags wagtailcore_tags %}
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img src="{% static 'media/images/logo.png' %}" alt="" width="60">
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-         {{ settings.navigation.NavigationMenuSetting.menu_items }}
-      </ul>
-      <form class="d-flex mt-3">
-        <input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-secondary " type="submit">Search</button>
-      </form>
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% pageurl page.get_site.root_page %}">
+            <img src="{% static 'media/images/logo.png' %}" alt="" width="60">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                {{ settings.navigation.NavigationMenuSetting.menu_items }}
+            </ul>
+            <form class="d-flex mt-3">
+                <input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-secondary " type="submit">Search</button>
+            </form>
+        </div>
     </div>
-  </div>
 </nav>
