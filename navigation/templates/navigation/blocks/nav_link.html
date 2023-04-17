@@ -1,15 +1,13 @@
 <li class="nav-item">
     <a href="{{ value.href }}" class="nav-link">
-        {% if value.is_live  %}     {# if published #}
-            {% if value.title %}    {# if name of menu #}
-                {{ value.title }}
-            {% else %}
-                {{ self.page.title }}
+        {% if value.page.live and value.page.show_in_menus %}     {# if page published and show_in_menus is True #}
+            {% if not value.live %} {# if not hide regular menu#}
+                {% if value.title %}    {# if name of menu #}
+                    {{ value.title }}
+                {% else %}
+                    {{ self.page.title }}
+                {% endif %}
             {% endif %}
         {% endif %}
     </a>
 </li>
-
-
-
-

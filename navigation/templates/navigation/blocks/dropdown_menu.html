@@ -1,20 +1,24 @@
 <li class="nav-item dropdown">
+{% if not value.live %} {# if not hide dropdownmenu #}
     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
         {{ value.title}}
     </a>
     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
         {% for item in value.menu_items %}
-            {% if item.value.is_live %}     {# if published #}
+            {% if item.value.page.live and item.value.page.show_in_menus %}     {# if page published and show_in_menus is True #}
+                {% if not item.value.live %}  {# if not hide regular menu #}
                 <li>
                     <a class="dropdown-item" href="{{ item.value.href }}">
                         {% if item.value.title %}    {# if name of menu #}
                             {{ item.value.title }}
                         {% else %}
-                            {{ item.value.title_page }}
+                            {{ item.value.page.title }}
                         {% endif %}
                     </a>
                 </li>
+                {% endif %}
             {% endif %}
         {% endfor %}
     </ul>
+{% endif %}
 </li>

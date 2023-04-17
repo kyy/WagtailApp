@@ -2,6 +2,7 @@ from wagtail import blocks as wagtail_blocks
 from wagtail.blocks import StructValue
 
 
+
 class NavigationExternalLinkStructValue(StructValue):
     def href(self):
         """Construct a URL with anchor if exists, otherwise use URL"""
@@ -34,15 +35,6 @@ class NavigationPageChooserStructValue(StructValue):
         href = f"{ url }#{ anchor }" if anchor else url
         return href
 
-    def is_live(self):
-        is_live = self.get("page").live
-        is_show_in_menus = self.get("page").show_in_menus
-        return all([is_live, is_show_in_menus])
-
-    def title_page(self):
-        title_page = self.get("page").title
-        return title_page
-
 
 class NavigationPageChooserBlock(wagtail_blocks.StructBlock):
     title = wagtail_blocks.CharBlock(
@@ -53,11 +45,19 @@ class NavigationPageChooserBlock(wagtail_blocks.StructBlock):
     page = wagtail_blocks.PageChooserBlock(
         label='Страница',
     )
+    live = wagtail_blocks.BooleanBlock(
+        default=False,
+        required=False,
+        label='Скрыть меню',
+        help_text='Включение/отключение отображения категории меню',
+
+    )
     anchor = wagtail_blocks.CharBlock(
         required=False,
         label='Якорь',
-        help_text="Для ссылки на определенные элементы страницы. Введите текст привязки без символа «#».",
+        help_text="Для ссылки на определенные элементы страницы, введите текст привязки без символа «#».",
     )
+
 
     class Meta:
         template = "navigation/blocks/nav_link.html"
@@ -69,6 +69,12 @@ class NavigationPageChooserBlock(wagtail_blocks.StructBlock):
 class NavigationDropdownMenuBlock(wagtail_blocks.StructBlock):
     title = wagtail_blocks.CharBlock(
         label='Имя выпадающего меню',
+    )
+    live = wagtail_blocks.BooleanBlock(
+        default=False,
+        required=False,
+        label='Скрыть выпадающее меню',
+        help_text='Включение/отключение выпадающего меню (субменю не буду отображаться)',
     )
     menu_items = wagtail_blocks.StreamBlock(
         [
