@@ -138,8 +138,11 @@ virtualenv==20.21.0
 wagtail==4.2.2
     # via
     #   -r requirements.in
+    #   wagtail-cache
     #   wagtail-color-panel
     #   wagtailmedia
+wagtail-cache==2.2.0
+    # via -r requirements.in
 wagtail-color-panel==1.4.1
     # via -r requirements.in
 wagtailmedia==0.13.0
