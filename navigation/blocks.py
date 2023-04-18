@@ -92,11 +92,13 @@ class NavigationDropdownMenuBlock(wagtail_blocks.StructBlock):
         label='Скрыть выпадающее меню',
         help_text='Включение/отключение выпадающего меню (субменю не буду отображаться)',
     )
+
     menu_items = wagtail_blocks.StreamBlock(
         [
             ("page", NavigationPageChooserBlock()),
             ("external_link", NavigationExternalLinkBlock()),
-        ]
+        ],
+        label='Обычное меню/внешняя ссылка',
     )
 
     class Meta:
