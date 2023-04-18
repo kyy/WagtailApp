@@ -19,16 +19,20 @@ class NavigationExternalLinkStructValue(StructValue):
 
 class NavigationExternalLinkBlock(wagtail_blocks.StructBlock):
     title = wagtail_blocks.CharBlock(
+        label='Имя внешней ссылки',
         required=True,
     )
     live = wagtail_blocks.BooleanBlock(
         default=False,
         required=False,
         label='Скрыть меню',
-        help_text='Включение/отключение меню',
+        help_text='Включение/отключение отображения меню',
     )
-    url = wagtail_blocks.URLBlock()
+    url = wagtail_blocks.URLBlock(
+        label='Внешняя ссылка'
+    )
     anchor = wagtail_blocks.CharBlock(
+        label='Якорь',
         required=False,
         help_text="Для ссылки на определенные элементы страницы. Введите текст привязки без символа «#».",
     )
@@ -90,7 +94,7 @@ class NavigationDropdownMenuBlock(wagtail_blocks.StructBlock):
         default=False,
         required=False,
         label='Скрыть выпадающее меню',
-        help_text='Включение/отключение выпадающего меню (субменю не буду отображаться)',
+        help_text='Включение/отключение отображения выпадающего меню (субменю не будут отображаться)',
     )
 
     menu_items = wagtail_blocks.StreamBlock(
@@ -98,7 +102,7 @@ class NavigationDropdownMenuBlock(wagtail_blocks.StructBlock):
             ("page", NavigationPageChooserBlock()),
             ("external_link", NavigationExternalLinkBlock()),
         ],
-        label='Обычное меню/внешняя ссылка',
+        label='Добавить обычное меню или внешнюю ссылку',
     )
 
     class Meta:
