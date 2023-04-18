@@ -110,4 +110,5 @@ class NavigationDropdownMenuBlock(wagtail_blocks.StructBlock):
     class Meta:
         template = "navigation/blocks/dropdown_menu.html"
         label = "Выпадающее меню"
-        icon = "arrow-down-big"
+        icon = "collapse-down"
+        collapsed = True

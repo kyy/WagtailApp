@@ -1,6 +1,7 @@
 import os
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from django.utils.safestring import mark_safe
 from wagtail.images import get_image_model
 from django.shortcuts import get_object_or_404
 from wagtailcache.cache import clear_cache
@@ -29,6 +30,24 @@ def resize_images_on_upload_or_edit(sender, instance, **kwargs):
                     os.replace(croped_file, original_file)
             except IOError:
                 pass
+
+
+@hooks.register('insert_editor_js')
+def editor_js():
+    return mark_safe(
+        """
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const blocks = document.querySelectorAll('div.c-sf-block__content[aria-hidden="true"]');
+                blocks.forEach(function(block) {
+                    if (block.querySelectorAll('div.error').length > 0) {
+                        block.parentNode.querySelector('.c-sf-block__header').click();
+                    }
+                });
+            });
+        </script>
+        """
+    )
 
 
 def clear_wagtailcache(*args, **kwargs):
