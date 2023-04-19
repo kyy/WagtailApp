@@ -49,6 +49,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.contrib.sitemaps",
 
+    "flags",
+    "wagtailflags",
     "wagtailcache",
     "wagtailmedia",
     "django_extensions",
@@ -194,4 +196,8 @@ CACHES = {
         'KEY_PREFIX': 'wagtailcache',
         'TIMEOUT': 3600,  # one hour (in seconds)
     }
+}
+
+FLAGS = {
+    'MY_FLAG': []
 }

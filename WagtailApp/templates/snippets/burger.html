@@ -1,6 +1,10 @@
 {% load static wagtailsettings_tags wagtailcore_tags %}
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<div class="container-fluid">
+    <br>
+    <h6>Sticky Navbar</h6>
+    {% lorem 1 p %}
+</div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
     <div class="container-fluid">
         <a class="navbar-brand" href="{% pageurl page.get_site.root_page %}">
             <img src="{% static 'media/images/logo.png' %}" alt="" width="60">

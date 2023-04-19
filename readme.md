@@ -10,6 +10,7 @@
 - wagtail-color-panel 1.4.1: <https://pypi.org/project/wagtail-color-panel/>
 - wagtailmedia 0.13.0: <https://pypi.org/project/wagtailmedia/>
 - wagtail-cache 2.2.0: <https://pypi.org/project/wagtail-cache/>
+- django-flags / wagtail-flags 5.3.0 <https://pypi.org/project/wagtail-flags/>
 
 ### INSTALLING:
 

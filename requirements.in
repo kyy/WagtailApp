@@ -15,3 +15,5 @@ fontawesomefree
 wagtailmedia
 wagtail-color-panel
 wagtail-cache
+django-flags
+wagtail-flags
