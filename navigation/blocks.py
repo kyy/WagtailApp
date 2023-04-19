@@ -1,3 +1,4 @@
+from wagtail.admin.panels import FieldPanel, FieldRowPanel
 from wagtail.blocks import (
     StructValue, StructBlock, CharBlock, URLBlock, BooleanBlock, StreamBlock, PageChooserBlock
 )

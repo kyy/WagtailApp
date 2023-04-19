@@ -26,7 +26,7 @@ class NavigationMenuSetting(BaseSiteSetting):
                     '<use href="#icon-help"></use></svg><p>Категория меню не будет отображаться если страница не '
                     'опубликована или</p><p> отсутствует отметка - <i>"Показывать в меню" </i>в параметрах страницы '
                     'на вкладке: </p><p><i>"Продвижение"</i>-><i>"Для меню сайта"</i></p></div>',
-            heading='',
+            heading='Инструкция',
         ),
         FieldPanel(
             "menu_items",
