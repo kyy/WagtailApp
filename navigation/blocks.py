@@ -103,9 +103,12 @@ class NavigationDropdownMenuBlock(wagtail_blocks.StructBlock):
             ("external_link", NavigationExternalLinkBlock()),
         ],
         label='Добавить обычное меню или внешнюю ссылку',
+        collapsed=True
+
     )
 
     class Meta:
         template = "navigation/blocks/dropdown_menu.html"
         label = "Выпадающее меню"
         icon = "arrow-down-big"
+

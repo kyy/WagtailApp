@@ -17,6 +17,7 @@ class NavigationMenuSetting(BaseSiteSetting):
             ("drop_down", NavigationDropdownMenuBlock()),
         ],
         use_json_field=True,
+        collapsed=True
     )
 
     panels = [
