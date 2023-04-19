@@ -1,5 +1,6 @@
-from wagtail import blocks as wagtail_blocks
-from wagtail.blocks import StructValue
+from wagtail.blocks import (
+    StructValue, StructBlock, CharBlock, URLBlock, BooleanBlock, StreamBlock, PageChooserBlock
+)
 
 
 class NavigationExternalLinkStructValue(StructValue):
@@ -17,21 +18,21 @@ class NavigationExternalLinkStructValue(StructValue):
         return True
 
 
-class NavigationExternalLinkBlock(wagtail_blocks.StructBlock):
-    title = wagtail_blocks.CharBlock(
+class NavigationExternalLinkBlock(StructBlock):
+    title = CharBlock(
         label='Имя внешней ссылки',
         required=True,
     )
-    live = wagtail_blocks.BooleanBlock(
+    live = BooleanBlock(
         default=False,
         required=False,
         label='Скрыть меню',
         help_text='Включение/отключение отображения меню',
     )
-    url = wagtail_blocks.URLBlock(
+    url = URLBlock(
         label='Внешняя ссылка'
     )
-    anchor = wagtail_blocks.CharBlock(
+    anchor = CharBlock(
         label='Якорь',
         required=False,
         help_text="Для ссылки на определенные элементы страницы. Введите текст привязки без символа «#».",
@@ -58,22 +59,22 @@ class NavigationPageChooserStructValue(StructValue):
         return all([live, show_in_menu])
 
 
-class NavigationPageChooserBlock(wagtail_blocks.StructBlock):
-    title = wagtail_blocks.CharBlock(
+class NavigationPageChooserBlock(StructBlock):
+    title = CharBlock(
         required=False,
         label='Изменить имя обычного меню',
         help_text='Поумолчанию используется имя страницы.',
     )
-    page = wagtail_blocks.PageChooserBlock(
+    page = PageChooserBlock(
         label='Страница',
     )
-    live = wagtail_blocks.BooleanBlock(
+    live = BooleanBlock(
         default=False,
         required=False,
         label='Скрыть меню',
         help_text='Включение/отключение отображения категории меню',
     )
-    anchor = wagtail_blocks.CharBlock(
+    anchor = CharBlock(
         required=False,
         label='Якорь',
         help_text="Для ссылки на определенные элементы страницы, введите текст привязки без символа «#».",
@@ -86,18 +87,18 @@ class NavigationPageChooserBlock(wagtail_blocks.StructBlock):
         value_class = NavigationPageChooserStructValue
 
 
-class NavigationDropdownMenuBlock(wagtail_blocks.StructBlock):
-    title = wagtail_blocks.CharBlock(
+class NavigationDropdownMenuBlock(StructBlock):
+    title = CharBlock(
         label='Имя выпадающего меню',
     )
-    live = wagtail_blocks.BooleanBlock(
+    live = BooleanBlock(
         default=False,
         required=False,
         label='Скрыть выпадающее меню',
         help_text='Включение/отключение отображения выпадающего меню (субменю не будут отображаться)',
     )
 
-    menu_items = wagtail_blocks.StreamBlock(
+    menu_items = StreamBlock(
         [
             ("page", NavigationPageChooserBlock()),
             ("external_link", NavigationExternalLinkBlock()),
