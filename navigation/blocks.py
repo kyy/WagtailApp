@@ -1,5 +1,4 @@
 from wagtail import blocks as wagtail_blocks
-from wagtail.admin.widgets import SwitchInput
 from wagtail.blocks import StructValue
 
 
