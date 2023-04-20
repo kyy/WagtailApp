@@ -1,3 +1,4 @@
+import wagtail.models
 from wagtail.admin.panels import FieldPanel, HelpPanel
 from wagtail.contrib.settings.models import BaseSiteSetting, register_setting
 from wagtail.fields import StreamField
@@ -6,6 +7,7 @@ from .blocks import (
     NavigationExternalLinkBlock,
     NavigationPageChooserBlock,
 )
+from django.shortcuts import get_object_or_404
 
 
 @register_setting
@@ -33,6 +35,13 @@ class NavigationMenuSetting(BaseSiteSetting):
             heading='Конструктор категорий меню',
         ),
     ]
+
+    def get_url(self):
+        # site_id = NavigationMenuSetting.objects.only('site_id').prefetch_related('site').first().site_id
+        site_id = get_object_or_404(
+            NavigationMenuSetting.objects.only('site_id'),
+            site__id__in=wagtail.models.Site.objects.all()).site_id
+        return f'/{site_id}'
 
     class Meta:
         verbose_name = "Меню навигации"
