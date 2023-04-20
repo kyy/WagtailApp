@@ -13,9 +13,14 @@
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 {{ settings.navigation.NavigationMenuSetting.menu_items }}
+                {% if request.user.is_superuser %}
+                    <a href="/admin/settings/navigation/navigationmenusetting/{{ settings.navigation.NavigationMenuSetting.site_id }}">
+                        изменить меню</a>
+                {% endif %}
             </ul>
             <form class="d-flex mt-3">
                 <input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search">
