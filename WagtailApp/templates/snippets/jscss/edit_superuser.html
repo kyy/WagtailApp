@@ -1,0 +1,16 @@
+<style>
+    .control_area {
+        border: 1px dashed black;
+    }
+</style>
+
+<script>
+    var button = document.querySelector('#{{ edit_link }}');
+    var div = document.querySelector('#{{ target }}');
+    button.onmouseover = function (e) {
+        div.classList.add('control_area');
+    };
+    div.onmouseout = function (e) {
+        div.classList.remove('control_area');
+    };
+</script>

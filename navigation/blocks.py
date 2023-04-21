@@ -112,5 +112,5 @@ class NavigationDropdownMenuBlock(StructBlock):
     class Meta:
         template = "navigation/blocks/dropdown_menu.html"
         label = "Выпадающее меню"
-        icon = "collapse-down"
+        icon = "arrow-down-big"
         collapsed = True
