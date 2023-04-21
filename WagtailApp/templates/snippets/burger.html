@@ -24,9 +24,6 @@
                     {% include 'snippets/jscss/edit_superuser.html' with edit_link='edit_navigation' target='target_edit_navigation' %}
                 {% endif %}
             </ul>
-            {% if request.user.is_superuser %}
-                {{ settings.navigation.NavigationMenuSetting.get_url }}
-            {% endif %}
             <form class="d-flex mt-3">
                 <input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-secondary " type="submit">Search</button>
