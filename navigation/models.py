@@ -1,4 +1,3 @@
-import wagtail.models
 from wagtail.admin.panels import FieldPanel, HelpPanel, TabbedInterface, ObjectList
 from wagtail.contrib.settings.models import BaseSiteSetting, register_setting
 from wagtail.fields import StreamField
@@ -7,10 +6,9 @@ from .blocks import (
     NavigationExternalLinkBlock,
     NavigationPageChooserBlock,
 )
-from django.shortcuts import get_object_or_404
 
 
-@register_setting
+# @register_setting
 class NavigationMenuSetting(BaseSiteSetting):
     menu_items = StreamField(
         [
