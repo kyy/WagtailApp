@@ -18,7 +18,9 @@
                 {{ settings.navigation.NavigationMenuSetting.menu_items }}
                 {% if request.user.is_superuser %}
                     <a href="/admin/settings/navigation/navigationmenusetting/{{ settings.navigation.NavigationMenuSetting.site_id }}">
-                        <i class="bi bi-wrench" id="edit_navigation"></i></a>
+                        <div class="d-none d-lg-block"><i class="bi bi-wrench" id="edit_navigation"
+                                                          style="z-index: 100; color: black;"></i></div>
+                    </a>
                     {% include 'snippets/jscss/edit_superuser.html' with edit_link='edit_navigation' target='target_edit_navigation' %}
                 {% endif %}
             </ul>
@@ -29,4 +31,5 @@
         </div>
     </div>
 </nav>
+
 
