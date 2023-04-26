@@ -15,9 +15,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="target_edit_navigation">
-                {{ settings.navigation.NavigationMenuSetting.menu_items }}
+                {{ settings.home.SettingsDesign.menu_items }}
                 {% if request.user.is_superuser %}
-                    <a href="/admin/settings/navigation/navigationmenusetting/{{ settings.navigation.NavigationMenuSetting.site_id }}">
+                    <a href="/admin/settings/home/settingsdesign/{{ settings.home.SettingsDesign.site_id }}/#tab-u041cu0435u043du044e_u0411u0443u0440u0433u0435u0440">
                         <div class="d-none d-lg-block"><i class="bi bi-wrench" id="edit_navigation"
                                                           style="z-index: 100; color: black;"></i></div>
                     </a>
