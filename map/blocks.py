@@ -1,0 +1,82 @@
+from wagtail.blocks import (
+    StructValue, StructBlock, CharBlock, BooleanBlock, ChoiceBlock, EmailBlock, TextBlock,
+)
+
+
+class PhoneBlock(StructBlock):
+    PROVIDERS = [
+        ("МТС", "МТС"),
+        ("A1", "A1"),
+        ("Life", "Life"),
+        ("Work", "Work"),
+        ("Fax", "Fax"),
+    ]
+    type = ChoiceBlock(
+        choices=PROVIDERS,
+        label='Провайдер',
+        required=False,
+        default='A1',
+    )
+    title = CharBlock(
+        default='',
+        label='Наименование',
+        required=False,
+        max_length=128,
+    )
+
+    number = CharBlock(
+        default='',
+        label='Номер',
+        required=False,
+        max_length=17,
+    )
+    live = BooleanBlock(
+        default=False,
+        required=False,
+        label='Скрыть',
+        help_text='Включение/отключение отображения номера',
+    )
+
+    class Meta:
+        label = "Добавить телефон"
+        icon = "arrow-down-big"
+        collapsed = True
+
+
+class MailBlock(StructBlock):
+    title = CharBlock(
+        default='Основной электронный адрес',
+        label='Наименование',
+        required=False,
+        max_length=128,
+    )
+    e_mail = EmailBlock(
+        default='',
+        label='e-mail',
+        required=True,
+        max_length=128,
+    )
+
+    class Meta:
+        label = "Добавить e-mail"
+        icon = "arrow-down-big"
+        collapsed = True
+
+
+class MapBlock(StructBlock):
+    live = BooleanBlock(
+        default=False,
+        required=False,
+        label='Скрыть',
+        help_text='Включение/отключение отображения карты',
+    )
+    html = TextBlock(
+        default='<div></div>',
+        label='<HTML>',
+        required=False,
+    )
+
+    class Meta:
+        label = "Добавить карту"
+        icon = "arrow-down-big"
+        collapsed = True
