@@ -14,12 +14,12 @@ class PhoneBlock(StructBlock):
     type = ChoiceBlock(
         choices=PROVIDERS,
         label='Провайдер',
-        required=False,
+        required=True,
         default='A1',
     )
     title = CharBlock(
         default='',
-        label='Наименование',
+        label='Имя',
         required=False,
         max_length=128,
     )
@@ -27,8 +27,9 @@ class PhoneBlock(StructBlock):
     number = CharBlock(
         default='',
         label='Номер',
-        required=False,
+        required=True,
         max_length=17,
+        help_text='Пример: «+375-29-666-44-22»'
     )
     live = BooleanBlock(
         default=False,
@@ -45,8 +46,8 @@ class PhoneBlock(StructBlock):
 
 class MailBlock(StructBlock):
     title = CharBlock(
-        default='Основной электронный адрес',
-        label='Наименование',
+        default='',
+        label='Имя',
         required=False,
         max_length=128,
     )
@@ -64,6 +65,12 @@ class MailBlock(StructBlock):
 
 
 class MapBlock(StructBlock):
+    title = CharBlock(
+        default='',
+        label='Имя',
+        required=False,
+        max_length=128,
+    )
     live = BooleanBlock(
         default=False,
         required=False,
@@ -71,7 +78,7 @@ class MapBlock(StructBlock):
         help_text='Включение/отключение отображения карты',
     )
     html = TextBlock(
-        default='<div></div>',
+        default='',
         label='<HTML>',
         required=False,
     )
@@ -80,3 +87,4 @@ class MapBlock(StructBlock):
         label = "Добавить карту"
         icon = "arrow-down-big"
         collapsed = True
+        template = "map/blocks/map.html"

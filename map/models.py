@@ -1,5 +1,5 @@
 from django.db.models import CharField, BooleanField, TextField
-from wagtail.admin.panels import HelpPanel, FieldPanel, FieldRowPanel, MultiFieldPanel
+from wagtail.admin.panels import HelpPanel, FieldPanel, FieldRowPanel, MultiFieldPanel, TabbedInterface, ObjectList
 from wagtail.contrib.settings.models import BaseSiteSetting, register_setting
 from wagtail.fields import StreamField
 
@@ -10,54 +10,53 @@ from .blocks import PhoneBlock, MailBlock, MapBlock
 class Map(BaseSiteSetting):
     map = StreamField(
         [
-            ('map', MapBlock(requred=False,
-                             default='[]',
-                             null=True,
-                             blank=True,
-                             )),
+            ('map', MapBlock(default='[]', )),
         ],
         use_json_field=True,
+        blank=True,
+        collapsed=True,
         verbose_name='Карта',
         block_counts={
             'map': {'min_num': 0, 'max_num': 1},
-        }
+        },
     )
     phone = StreamField(
         [
-            ('phone', PhoneBlock(requred=False,
-                                 default='[]',
-                                 null=True,
-                                 blank=True,
-                                 )),
+            ('phone', PhoneBlock(
+                default='[]',
+            )),
         ],
         use_json_field=True,
+        blank=True,
+        collapsed=True,
         verbose_name='Телефоны',
         block_counts={
             'phone': {'min_num': 0, 'max_num': 5},
-        }
+        },
 
     )
 
     email = StreamField(
         [
-            ('email', MailBlock(requred=False,
-                                default='[]',
-                                null=True,
-                                blank=True,
-                                )),
+            ('email', MailBlock(
+                default='[]',
+            )),
         ],
         use_json_field=True,
+        blank=True,
+        collapsed=True,
         verbose_name='Электронные адреса',
         block_counts={
             'email': {'min_num': 0, 'max_num': 5},
-        }
+        },
     )
 
     panels = [
         HelpPanel(
+            heading='Инструкция',
             content='<div class="help-block help-info"><svg class="icon icon-help icon" aria-hidden="true">'
                     '<use href="#icon-help"></use></svg><p>Контактные данные</p></div>',
-            heading='Инструкция',
+
         ),
 
         MultiFieldPanel([
@@ -79,6 +78,10 @@ class Map(BaseSiteSetting):
             classname='collapsed'
         ),
     ]
+
+    edit_handler = TabbedInterface([
+        ObjectList(panels, heading='«Контакты»'),
+    ])
 
     class Meta:
         verbose_name = "Контакты"

@@ -8,25 +8,27 @@ from .blocks import (
 )
 
 
-# @register_setting
+@register_setting
 class NavigationMenuSetting(BaseSiteSetting):
     menu_items = StreamField(
         [
-            ("internal_page", NavigationPageChooserBlock()),
-            ("external_link", NavigationExternalLinkBlock()),
-            ("drop_down", NavigationDropdownMenuBlock()),
+            ("internal_page", NavigationPageChooserBlock(default='[]', )),
+            ("external_link", NavigationExternalLinkBlock(default='[]', )),
+            ("drop_down", NavigationDropdownMenuBlock(default='[]', )),
         ],
+        blank=True,
         use_json_field=True,
         collapsed=True,
     )
 
     panels = [
         HelpPanel(
+            heading='Инструкция',
             content='<div class="help-block help-info"><svg class="icon icon-help icon" aria-hidden="true">'
                     '<use href="#icon-help"></use></svg><p>Категория меню не будет отображаться если страница не '
                     'опубликована или</p><p> отсутствует отметка - <i>«Показывать в меню» </i>в параметрах страницы '
                     'на вкладке: </p><p><i>«Продвижение»</i> --> <i>«Для меню сайта»</i></p></div>',
-            heading='Инструкция',
+
         ),
         FieldPanel(
             "menu_items",
