@@ -89,9 +89,13 @@ class NavigationPageChooserBlock(StructBlock):
 
 class NavigationDropdownMenuStructValue(StructValue):
     def empty(self):
-        show_hide = [i.value['live'] for i in self.get("menu_items")]  # check show/hide setting in menubuilder
-        show_in_menus = [all([i.value['page'].show_in_menus, i.value['page'].live]) for i in
-                         self.get("menu_items")]  # check page show_in_menu and live
+        """
+        return True if DROPDOWN_MENU have submenus
+        """
+        show_hide, show_in_menus = [], []
+        for i in self.get("menu_items"):
+            show_hide.append(i.value['live'])
+            show_in_menus.append(all([i.value['page'].show_in_menus, i.value['page'].live]))
         return True if True in show_in_menus and all(show_hide) is False else False
 
 
