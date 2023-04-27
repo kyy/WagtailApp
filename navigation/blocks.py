@@ -1,4 +1,3 @@
-from wagtail.admin.panels import FieldPanel, FieldRowPanel
 from wagtail.blocks import (
     StructValue, StructBlock, CharBlock, URLBlock, BooleanBlock, StreamBlock, PageChooserBlock
 )
@@ -88,6 +87,14 @@ class NavigationPageChooserBlock(StructBlock):
         value_class = NavigationPageChooserStructValue
 
 
+class NavigationDropdownMenuStructValue(StructValue):
+    def empty(self):
+        show_hide = [i.value['live'] for i in self.get("menu_items")]  # check show/hide setting in menubuilder
+        show_in_menus = [all([i.value['page'].show_in_menus, i.value['page'].live]) for i in
+                         self.get("menu_items")]  # check page show_in_menu and live
+        return True if True in show_in_menus and all(show_hide) is False else False
+
+
 class NavigationDropdownMenuBlock(StructBlock):
     title = CharBlock(
         label='Имя выпадающего меню',
@@ -106,7 +113,6 @@ class NavigationDropdownMenuBlock(StructBlock):
         ],
         label='Добавить обычное меню или внешнюю ссылку',
         collapsed=True
-
     )
 
     class Meta:
@@ -114,3 +120,4 @@ class NavigationDropdownMenuBlock(StructBlock):
         label = "Выпадающее меню"
         icon = "arrow-down-big"
         collapsed = True
+        value_class = NavigationDropdownMenuStructValue

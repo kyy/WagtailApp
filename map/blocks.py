@@ -23,7 +23,6 @@ class PhoneBlock(StructBlock):
         required=False,
         max_length=128,
     )
-
     number = CharBlock(
         default='',
         label='Номер',

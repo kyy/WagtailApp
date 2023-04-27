@@ -1,17 +1,17 @@
 {% with ico_ext_link='navigation/blocks/snippets/ico_external_link.html' %}
     <li class="nav-item dropdown">
-        {% if not value.live %} {# if not hide dropdownmenu #}
+        {% if not value.live and value.empty %}   <!--if not hide dropdownmenu and not empty (0 submenu)-->
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
                aria-expanded="false">
                 {{ value.title }}
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 {% for item in value.menu_items %}
-                    {% if item.value.is_live %}     {# if page published and show_in_menus is True #}
-                        {% if not item.value.live %}  {# if not hide regular menu #}
+                    {% if item.value.is_live %}     <!--if page published and show_in_menus is True-->
+                        {% if not item.value.live %}    <!--if not hide regular menu-->
                             <li>
                                 <a class="dropdown-item" href="{{ item.value.href }}">
-                                    {% if item.value.title %}    {# if name of menu #}
+                                    {% if item.value.title %}    <!--if name of menu-->
                                         {{ item.value.title }}  {% if item.value.is_external %}
                                         {% include ico_ext_link %} {% endif %}
                                     {% else %}

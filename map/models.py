@@ -1,5 +1,4 @@
-from django.db.models import CharField, BooleanField, TextField
-from wagtail.admin.panels import HelpPanel, FieldPanel, FieldRowPanel, MultiFieldPanel, TabbedInterface, ObjectList
+from wagtail.admin.panels import HelpPanel, FieldPanel, MultiFieldPanel, TabbedInterface, ObjectList
 from wagtail.contrib.settings.models import BaseSiteSetting, register_setting
 from wagtail.fields import StreamField
 
@@ -22,9 +21,7 @@ class Map(BaseSiteSetting):
     )
     phone = StreamField(
         [
-            ('phone', PhoneBlock(
-                default='[]',
-            )),
+            ('phone', PhoneBlock(default='[]', )),
         ],
         use_json_field=True,
         blank=True,
@@ -33,14 +30,10 @@ class Map(BaseSiteSetting):
         block_counts={
             'phone': {'min_num': 0, 'max_num': 5},
         },
-
     )
-
     email = StreamField(
         [
-            ('email', MailBlock(
-                default='[]',
-            )),
+            ('email', MailBlock(default='[]', )),
         ],
         use_json_field=True,
         blank=True,
@@ -56,9 +49,7 @@ class Map(BaseSiteSetting):
             heading='Инструкция',
             content='<div class="help-block help-info"><svg class="icon icon-help icon" aria-hidden="true">'
                     '<use href="#icon-help"></use></svg><p>Контактные данные</p></div>',
-
         ),
-
         MultiFieldPanel([
             FieldPanel('phone'),
         ],
