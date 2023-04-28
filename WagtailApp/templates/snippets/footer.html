@@ -30,15 +30,15 @@
                     Контакты
                 </div>
                 <ul class="fa-ul" style="margin-left:13px;">
-                    {{ settings.map.Map.phone }}
-                    {{ settings.map.Map.email }}
+                    <li>{{ settings.map.Map.phone }}</li>
+                    <li>{{ settings.map.Map.email }}</li>
                     <li><br/></li>
                     <li>
-                        <i class="fa-li fa fa-home launch-show"></i>{{ settings.map.Map.address }}
+                        {{ settings.map.Map.address_ico|richtext }}{{ settings.map.Map.address }}
                     </li>
                     <li><br/></li>
                     <li>
-                        <i class="fa-li fa fa-home launch-show"></i>{{ settings.map.Map.work_time }}
+                        {{ settings.map.Map.work_time_ico|richtext }}{{ settings.map.Map.work_time }}
                     </li>
                 </ul>
             </div>

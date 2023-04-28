@@ -1,5 +1,5 @@
 from django.db.models import CharField
-from wagtail.admin.panels import HelpPanel, FieldPanel, MultiFieldPanel, TabbedInterface, ObjectList
+from wagtail.admin.panels import HelpPanel, FieldPanel, MultiFieldPanel, TabbedInterface, ObjectList, FieldRowPanel
 from wagtail.contrib.settings.models import BaseSiteSetting, register_setting
 from wagtail.fields import StreamField
 
@@ -14,10 +14,22 @@ class Map(BaseSiteSetting):
         verbose_name='Адрес',
         max_length=128,
     )
+    address_ico = CharField(
+        blank=True,
+        default='<i class="fa-li fa fa-home launch-show"></i>',
+        verbose_name='ico',
+        max_length=128,
+    )
     work_time = CharField(
         blank=True,
         default='',
         verbose_name='Рабочее время',
+        max_length=128,
+    )
+    work_time_ico = CharField(
+        blank=True,
+        default='<i class="fa-solid fa-clock"></i>',
+        verbose_name='ico',
         max_length=128,
     )
     map = StreamField(
@@ -76,8 +88,14 @@ class Map(BaseSiteSetting):
             classname='collapsed'
         ),
         MultiFieldPanel([
-            FieldPanel('address'),
-            FieldPanel('work_time'),
+            FieldRowPanel([
+                FieldPanel('address'),
+                FieldPanel('address_ico'),
+            ]),
+            FieldRowPanel([
+                FieldPanel('work_time'),
+                FieldPanel('work_time_ico'),
+            ]),
             FieldPanel('map'),
         ],
             heading='Адрес / Карта / Время работы',

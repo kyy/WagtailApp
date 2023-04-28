@@ -1,10 +1,6 @@
 {% load wagtailcore_tags %}
 
-
-<li>
-    <i class="fa-li fa fa-phone"></i>
-    {{ value.type }}:
-    <a href="tel:{{ value.number }}">
-        {{ value.number }}
-    </a>
-</li>
+{{ value.ico|richtext }}
+<a href="tel:{{ value.number }}">
+    {{ value.type }} {{ value.number }}
+</a>

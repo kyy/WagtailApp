@@ -1,9 +1,7 @@
 {% load wagtailcore_tags %}
 
+{{ value.ico|richtext }}
+<a onClick="javascript:window.open('mailto:info@stanwood.by', 'Mail');event.preventDefault()">
+    {{ value.e_mail }}
+</a>
 
-<li>
-    <i class="fa-li fa fa-envelope-o "></i>
-    <a onClick="javascript:window.open('mailto:info@stanwood.by', 'Mail');event.preventDefault()">
-        {{ value.e_mail }}
-    </a>
-</li>
