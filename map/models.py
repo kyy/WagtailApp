@@ -1,3 +1,4 @@
+from django.db.models import CharField
 from wagtail.admin.panels import HelpPanel, FieldPanel, MultiFieldPanel, TabbedInterface, ObjectList
 from wagtail.contrib.settings.models import BaseSiteSetting, register_setting
 from wagtail.fields import StreamField
@@ -7,6 +8,18 @@ from .blocks import PhoneBlock, MailBlock, MapBlock
 
 @register_setting
 class Map(BaseSiteSetting):
+    address = CharField(
+        blank=True,
+        default='',
+        verbose_name='Адрес',
+        max_length=128,
+    )
+    work_time = CharField(
+        blank=True,
+        default='',
+        verbose_name='Рабочее время',
+        max_length=128,
+    )
     map = StreamField(
         [
             ('map', MapBlock(default='[]', )),
@@ -63,9 +76,11 @@ class Map(BaseSiteSetting):
             classname='collapsed'
         ),
         MultiFieldPanel([
+            FieldPanel('address'),
+            FieldPanel('work_time'),
             FieldPanel('map'),
         ],
-            heading='Карта',
+            heading='Адрес / Карта / Время работы',
             classname='collapsed'
         ),
     ]

@@ -41,6 +41,7 @@ class PhoneBlock(StructBlock):
         label = "Добавить телефон"
         icon = "arrow-down-big"
         collapsed = True
+        template = "map/blocks/phone.html"
 
 
 class MailBlock(StructBlock):
@@ -61,6 +62,7 @@ class MailBlock(StructBlock):
         label = "Добавить e-mail"
         icon = "arrow-down-big"
         collapsed = True
+        template = "map/blocks/email.html"
 
 
 class MapBlock(StructBlock):

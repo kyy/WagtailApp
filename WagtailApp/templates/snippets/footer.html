@@ -1,5 +1,54 @@
 {% load static wagtailcore_tags wagtailsettings_tags %}
 
+<style>
+    .block-contacts {
+        width: 23%;
+        height: 316px;
+        position: absolute;
+        top: 2px;
+        z-index: 1000;
+        background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 1));
+        background: -o-linear-gradient(left, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 1));
+        background: -moz-linear-gradient(left, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 1));
+        background: linear-gradient(to left, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 1));
+        right: 10px;
+        padding: 0 5px;
+    }
+
+    .info-block {
+        margin-left: 12px;
+        font-size: 16px;
+    }
+</style>
+
+<div class="line1"></div>
+<div class="container">
+    <div id="map-canvas2" style="position:relative; margin: 0 auto;">
+        <div class="block-contacts d-none d-lg-block">
+            <div class="info-block">
+                <div class="footer_contacts">
+                    Контакты
+                </div>
+                <ul class="fa-ul" style="margin-left:13px;">
+                    {{ settings.map.Map.phone }}
+                    {{ settings.map.Map.email }}
+                    <li><br/></li>
+                    <li>
+                        <i class="fa-li fa fa-home launch-show"></i>{{ settings.map.Map.address }}
+                    </li>
+                    <li><br/></li>
+                    <li>
+                        <i class="fa-li fa fa-home launch-show"></i>{{ settings.map.Map.work_time }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{{ settings.map.Map.map }}
+<div class="line2"></div>
+
+
 <!-- Footer -->
 <footer class="text-center text-lg-start bg-light text-muted">
     <!-- Section: Social media -->
@@ -47,7 +96,7 @@
                         <i class="fas fa-gem me-3"></i>Мы находимся
                     </h6>
                     <p>
-                        {{ settings.map.Map.map }}
+
                     </p>
                 </div>
                 <!-- Grid column -->
