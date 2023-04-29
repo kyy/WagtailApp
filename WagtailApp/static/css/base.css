@@ -45,7 +45,7 @@ body {
     font-weight: 500;
 }
 
-.block-phone {
+.block-phone, .block-email {
     margin-bottom: 8px;
 }
 
@@ -58,4 +58,21 @@ body {
 .block-phone > a:hover, .block-email > a:hover {
     color: #b2b2b2;
 
+}
+
+.block-brands > a {
+    padding: 10px;
+    margin-right: 5px;
+    color: #1a1d20;
+}
+
+
+.block-brands > a:hover {
+    color: #b2b2b2;
+}
+
+.brands {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
 }
