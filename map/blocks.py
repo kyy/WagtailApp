@@ -1,5 +1,5 @@
 from wagtail.blocks import (
-    StructValue, StructBlock, CharBlock, BooleanBlock, ChoiceBlock, EmailBlock, TextBlock,
+    StructValue, StructBlock, CharBlock, BooleanBlock, ChoiceBlock, EmailBlock, TextBlock, URLBlock
 )
 
 
@@ -105,3 +105,29 @@ class MapBlock(StructBlock):
         icon = "arrow-down-big"
         collapsed = True
         template = "map/blocks/map.html"
+
+
+class BrandsBlock(StructBlock):
+    title = CharBlock(
+        default='Имя',
+        label='Имя',
+        required=False,
+        max_length=128,
+    )
+    ico = CharBlock(
+        default='',
+        label='Иконка',
+        required=False,
+        max_length=128,
+    )
+    url = URLBlock(
+        default='',
+        label='url',
+        required=True,
+    )
+
+    class Meta:
+        label = "Добавить социальную сеть"
+        icon = "arrow-down-big"
+        collapsed = True
+        template = "map/blocks/brands.html"

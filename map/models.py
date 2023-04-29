@@ -3,7 +3,7 @@ from wagtail.admin.panels import HelpPanel, FieldPanel, MultiFieldPanel, TabbedI
 from wagtail.contrib.settings.models import BaseSiteSetting, register_setting
 from wagtail.fields import StreamField
 
-from .blocks import PhoneBlock, MailBlock, MapBlock
+from .blocks import PhoneBlock, MailBlock, MapBlock, BrandsBlock
 
 
 @register_setting
@@ -68,6 +68,18 @@ class Map(BaseSiteSetting):
             'email': {'min_num': 0, 'max_num': 5},
         },
     )
+    brands = StreamField(
+        [
+            ('brands', BrandsBlock(default='[]', )),
+        ],
+        use_json_field=True,
+        blank=True,
+        collapsed=True,
+        verbose_name='Социальные сети',
+        block_counts={
+            'brands': {'min_num': 0, 'max_num': 10},
+        },
+    )
 
     panels = [
         HelpPanel(
@@ -104,6 +116,12 @@ class Map(BaseSiteSetting):
             FieldPanel('map'),
         ],
             heading='Адрес / Карта / Время работы',
+            classname='collapsed'
+        ),
+        MultiFieldPanel([
+            FieldPanel('brands'),
+        ],
+            heading='Социальные сети',
             classname='collapsed'
         ),
     ]
