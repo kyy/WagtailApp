@@ -10,7 +10,7 @@ from .blocks import PhoneBlock, MailBlock, MapBlock
 class Map(BaseSiteSetting):
     address = CharField(
         blank=True,
-        default='',
+        default='Manchester city, Redstreet str. 43-56',
         verbose_name='Адрес',
         max_length=128,
     )
@@ -22,7 +22,7 @@ class Map(BaseSiteSetting):
     )
     work_time = CharField(
         blank=True,
-        default='',
+        default='(mon-sut: 8:00-16:00)',
         verbose_name='Рабочее время',
         max_length=128,
     )
