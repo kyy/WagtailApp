@@ -20,7 +20,7 @@ class PhoneBlock(StructBlock):
     )
     ico = CharBlock(
         default='<i class="fa-solid fa-phone"></i>',
-        label='ico',
+        label='Иконка',
         required=False,
         max_length=128,
     )
@@ -60,7 +60,7 @@ class MailBlock(StructBlock):
     )
     ico = CharBlock(
         default='<i class="fa-solid fa-envelope"></i>',
-        label='ico',
+        label='Иконка',
         required=False,
         max_length=128,
     )

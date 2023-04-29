@@ -16,8 +16,8 @@ class Map(BaseSiteSetting):
     )
     address_ico = CharField(
         blank=True,
-        default='<i class="fa-li fa fa-home launch-show"></i>',
-        verbose_name='ico',
+        default='<i class="fa-solid fa-house"></i>',
+        verbose_name='Иконка адреса',
         max_length=128,
     )
     work_time = CharField(
@@ -29,7 +29,7 @@ class Map(BaseSiteSetting):
     work_time_ico = CharField(
         blank=True,
         default='<i class="fa-solid fa-clock"></i>',
-        verbose_name='ico',
+        verbose_name='Иконка рабочего времени',
         max_length=128,
     )
     map = StreamField(
@@ -71,9 +71,14 @@ class Map(BaseSiteSetting):
 
     panels = [
         HelpPanel(
-            heading='Инструкция',
+            heading='Вспомогательные ресурсы',
             content='<div class="help-block help-info"><svg class="icon icon-help icon" aria-hidden="true">'
-                    '<use href="#icon-help"></use></svg><p>Контактные данные</p></div>',
+                    '<use href="#icon-help"></use></svg><p>При добавлении карты отредактируйте ширину и высоту фрейма!</p></div>'
+                    '<p><b>ИКОНКИ: </b><a href="https://fontawesome.com/search?o=r&m=free" target="_blank">Fontawesome</a> / '
+                    '<a href="https://icons.getbootstrap.com/" target="_blank">Bootstrap</a></p>'
+                    '<p><b>КАРТЫ: </b><a href="https://yandex.ru/maps/" target="_blank">Яндекс Карты</a> / '
+                    '<a href="https://www.google.com/maps/?hl=RU" target="_blank">Google Карты</a></p>'
+            ,
         ),
         MultiFieldPanel([
             FieldPanel('phone'),

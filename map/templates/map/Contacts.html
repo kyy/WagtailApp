@@ -1,0 +1,11 @@
+{% load wagtailcore_tags wagtailsettings_tags %}
+
+<ul class="fa-ul" id="target_edit_contacts" style="margin-left:13px;">
+    <li>{{ settings.map.Map.phone }}</li>
+    <li><br/></li>
+    <li>{{ settings.map.Map.email }}</li>
+    <li><br/></li>
+    <li>{{ settings.map.Map.work_time_ico|richtext }} {{ settings.map.Map.work_time }}</li>
+    <li><br/></li>
+    <li>{{ settings.map.Map.address_ico|richtext }} {{ settings.map.Map.address }}</li>
+</ul>

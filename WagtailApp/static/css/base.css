@@ -1,0 +1,61 @@
+body {
+    background: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color: #777;
+    line-height: 20px;
+    width: 100%;
+}
+
+
+.block-contacts {
+    width: 26%;
+    height: 316px;
+    position: absolute;
+    top: 2px;
+    z-index: 1000;
+    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 1));
+    background: -o-linear-gradient(left, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 1));
+    background: -moz-linear-gradient(left, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 1));
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 1));
+    right: 5px;
+    padding: 0 5px;
+}
+
+
+.info-block {
+    margin-left: 12px;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.footer_contacts {
+    color: #272727;
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 35px;
+    margin-left: 12px;
+    margin-top: 23px;
+    text-transform: uppercase;
+}
+
+.block-contacts li {
+    color: #363535;
+    font-weight: 500;
+}
+
+.block-phone {
+    margin-bottom: 8px;
+}
+
+.block-phone > a, .block-email > a {
+    color: #1a1d20;
+    text-decoration: none
+
+}
+
+.block-phone > a:hover, .block-email > a:hover {
+    color: #b2b2b2;
+
+}

@@ -14,15 +14,8 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="target_edit_navigation">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 {{ settings.navigation.NavigationMenuSetting.menu_items }}
-                {% if request.user.is_superuser %}
-                    <a href="/admin/settings/navigation/navigationmenusetting/{{ settings.navigation.NavigationMenuSetting.site_id }}/#tab-u041cu0435u043du044e_u0411u0443u0440u0433u0435u0440">
-                        <div class="d-none d-lg-block"><i class="bi bi-wrench" id="edit_navigation"
-                                                          style="z-index: 100; color: black;"></i></div>
-                    </a>
-                    {% include 'snippets/jscss/edit_superuser.html' with edit_link='edit_navigation' target='target_edit_navigation' %}
-                {% endif %}
             </ul>
             <form class="d-flex mt-3">
                 <input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search">
