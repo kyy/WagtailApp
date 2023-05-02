@@ -45,10 +45,11 @@ body {
 .block-contacts li {
     color: #363535;
     font-weight: 500;
+    padding-bottom: 1em;
 }
 
 .block-phone, .block-email {
-    margin-bottom: 8px;
+    margin-bottom: 0.2em;
 }
 
 .block-phone > a, .block-email > a {
@@ -90,5 +91,6 @@ body {
 }
 
 .dropdown-item {
-    line-height: 1;
+    line-height: 1em;
 }
+
