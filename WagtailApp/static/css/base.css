@@ -2,9 +2,11 @@ body {
     background: #fff;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
+    font-size: 14px;
     color: #777;
     line-height: 20px;
     width: 100%;
+
 }
 
 
@@ -78,3 +80,15 @@ body {
     flex-wrap: nowrap;
 }
 
+.nav-link, .dropdown-item {
+    background-color: transparent;
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #272727;
+
+}
+
+.dropdown-item {
+    line-height: 1;
+}
