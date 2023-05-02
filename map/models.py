@@ -1,4 +1,4 @@
-from django.db.models import CharField
+from django.db.models import CharField, BooleanField
 from wagtail.admin.panels import HelpPanel, FieldPanel, MultiFieldPanel, TabbedInterface, ObjectList, FieldRowPanel
 from wagtail.contrib.settings.models import BaseSiteSetting, register_setting
 from wagtail.fields import StreamField
@@ -31,6 +31,16 @@ class Map(BaseSiteSetting):
         default='<i class="fa-solid fa-clock"></i>',
         verbose_name='Иконка рабочего времени',
         max_length=128,
+    )
+    address_live = BooleanField(
+        default=False,
+        verbose_name='Скрыть',
+        help_text='Включение/отключение отображения контактов и карты',
+    )
+    brands_live = BooleanField(
+        default=False,
+        verbose_name='Скрыть',
+        help_text='Включение/отключение отображения социальных сетей',
     )
     map = StreamField(
         [
@@ -93,6 +103,21 @@ class Map(BaseSiteSetting):
             ,
         ),
         MultiFieldPanel([
+            FieldRowPanel([
+                FieldPanel('address'),
+                FieldPanel('address_ico'),
+            ]),
+            FieldRowPanel([
+                FieldPanel('work_time'),
+                FieldPanel('work_time_ico'),
+            ]),
+            FieldPanel('address_live'),
+            FieldPanel('map'),
+        ],
+            heading='Адрес / Карта / Время работы',
+            classname='collapsed'
+        ),
+        MultiFieldPanel([
             FieldPanel('phone'),
         ],
             heading='Номера телефонные',
@@ -105,20 +130,7 @@ class Map(BaseSiteSetting):
             classname='collapsed'
         ),
         MultiFieldPanel([
-            FieldRowPanel([
-                FieldPanel('address'),
-                FieldPanel('address_ico'),
-            ]),
-            FieldRowPanel([
-                FieldPanel('work_time'),
-                FieldPanel('work_time_ico'),
-            ]),
-            FieldPanel('map'),
-        ],
-            heading='Адрес / Карта / Время работы',
-            classname='collapsed'
-        ),
-        MultiFieldPanel([
+            FieldPanel('brands_live'),
             FieldPanel('brands'),
         ],
             heading='Социальные сети',

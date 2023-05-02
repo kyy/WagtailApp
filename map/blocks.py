@@ -69,6 +69,12 @@ class MailBlock(StructBlock):
         required=True,
         max_length=128,
     )
+    live = BooleanBlock(
+        default=False,
+        required=False,
+        label='Скрыть',
+        help_text='Включение/отключение отображения адреса',
+    )
 
     class Meta:
         label = "Добавить e-mail"

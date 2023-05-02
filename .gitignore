@@ -1,5 +1,5 @@
 .env
 .idea
+.djcache
 *.sqlite3
-!/cache/
 /cache/

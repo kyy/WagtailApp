@@ -1,6 +1,8 @@
 {% load wagtailcore_tags %}
 
-{{ value.ico|richtext }}
-<a href="tel:{{ value.number }}">
-    {{ value.type }} {{ value.number }}
-</a>
+{% if not value.live %}
+    {{ value.ico|richtext }}
+    <a href="tel:{{ value.number }}">
+        {{ value.type }} {{ value.number }}
+    </a>
+{% endif %}

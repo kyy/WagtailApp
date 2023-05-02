@@ -1,4 +1,5 @@
 {% load wagtailcore_tags %}
 
-
-{{ value.html|richtext }}
+{% if not value.live %}
+    {{ value.html|richtext }}
+{% endif %}
