@@ -1,6 +1,7 @@
 {% load wagtailcore_tags %}
 
-<a href="{{ value.url }}">
+
+<a href="{{ value.url }}" data-cooltipz-dir="top" aria-label="{{ value.title }}">
     {{ value.ico|richtext }}
 </a>
 

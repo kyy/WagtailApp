@@ -64,6 +64,7 @@ body {
     padding: 10px;
     margin-right: 5px;
     color: #1a1d20;
+    z-index: 2000;
 }
 
 
@@ -76,3 +77,4 @@ body {
     flex-direction: row;
     flex-wrap: nowrap;
 }
+
