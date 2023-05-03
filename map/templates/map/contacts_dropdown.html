@@ -1,0 +1,28 @@
+<style>
+    #contacts_dropdown span > a, .btn, .btn:enabled {
+        color: #d9d9d9;
+        text-decoration: none;
+        letter-spacing: 1px;
+    }
+
+    #contacts_dropdown span > a:hover, .btn:hover, .btn:visited, a:visited {
+        color: white;
+    }
+</style>
+
+<div id="contacts_dropdown" class="btn-group">
+    <button class="btn btn-sm dropdown-toggle shadow-none bg-black" type="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+        <span>{{ settings.map.Map.phone.0 }}</span>
+    </button>
+    <ul class="dropdown-menu" style="z-index: 2000">
+        <li>{{ settings.map.Map.phone }}</li>
+        <li>
+            <hr class="dropdown-divider">
+        </li>
+        <li>{{ settings.map.Map.email }}</li>
+    </ul>
+</div>
+
+
+
