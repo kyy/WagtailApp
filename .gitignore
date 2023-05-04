@@ -3,3 +3,4 @@
 .djcache
 *.sqlite3
 /cache/
+/media/

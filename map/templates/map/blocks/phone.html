@@ -3,6 +3,6 @@
 {% if not value.live %}
     {{ value.ico|richtext }}&nbsp
     <a href="tel:{{ value.number }}">
-        {{ value.type }}&nbsp{{ value.number }}
+        <span style="font-weight: 700">{{ value.type }}</span>&nbsp{{ value.number }}
     </a>
 {% endif %}

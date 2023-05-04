@@ -120,6 +120,6 @@ body {
     box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
 }
 
-svg {
-    color: #939393;
+.block-contacts svg, #contacts_dropdown ul svg {
+    color: #000000;
 }
