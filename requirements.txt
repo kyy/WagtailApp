@@ -41,9 +41,9 @@ django==4.1.7
     #   djangorestframework
     #   wagtail
     #   wagtailmedia
-django-browser-reload==1.7.0
+django-browser-reload==1.8.0
     # via -r requirements.in
-django-debug-toolbar==3.8.1
+django-debug-toolbar==4.0.0
     # via -r requirements.in
 django-extensions==3.2.1
     # via -r requirements.in
@@ -67,7 +67,7 @@ draftjs-exporter==2.1.7
     # via wagtail
 et-xmlfile==1.1.0
     # via openpyxl
-filelock==3.10.3
+filelock==3.12.0
     # via virtualenv
 fontawesomefree==6.4.0
     # via -r requirements.in
@@ -83,7 +83,7 @@ l18n==2021.3
     # via wagtail
 markupsafe==2.1.2
     # via jinja2
-mysql-connector-python==8.0.32
+mysql-connector-python==8.0.33
     # via -r requirements.in
 mysqlclient==2.1.1
     # via -r requirements.in
@@ -91,17 +91,17 @@ nodeenv==1.7.0
     # via pre-commit
 openpyxl==3.1.2
     # via wagtail
-packaging==23.0
+packaging==23.1
     # via build
-pillow==9.4.0
+pillow==9.5.0
     # via wagtail
-pip-tools==6.12.3
+pip-tools==6.13.0
     # via -r requirements.in
-platformdirs==3.1.1
+platformdirs==3.5.0
     # via virtualenv
-pre-commit==3.2.0
+pre-commit==3.3.1
     # via -r requirements.in
-protobuf==3.20.3
+protobuf==4.22.3
     # via mysql-connector-python
 pydantic[dotenv]==1.10.7
     # via -r requirements.in
@@ -124,23 +124,25 @@ six==1.16.0
     #   l18n
 soupsieve==2.4
     # via beautifulsoup4
-sqlparse==0.4.3
+sqlparse==0.4.4
     # via
     #   django
     #   django-debug-toolbar
 telepath==0.3
     # via wagtail
 tomli==2.0.1
-    # via build
+    # via
+    #   build
+    #   pyproject-hooks
 typing-extensions==4.5.0
     # via pydantic
 tzdata==2022.7
     # via django
 urllib3==1.26.15
     # via requests
-virtualenv==20.21.0
+virtualenv==20.23.0
     # via pre-commit
-wagtail==4.2.2
+wagtail==4.2.3
     # via
     #   -r requirements.in
     #   wagtail-cache
@@ -153,7 +155,7 @@ wagtail-color-panel==1.4.1
     # via -r requirements.in
 wagtail-flags==5.3.0
     # via -r requirements.in
-wagtailmedia==0.13.0
+wagtailmedia==0.14.0
     # via -r requirements.in
 webencodings==0.5.1
     # via html5lib
