@@ -58,7 +58,6 @@ INSTALLED_APPS = [
     "wagtailcache",
     "wagtailmedia",
     "django_extensions",
-    "fontawesomefree",
     "webpack_boilerplate",
 ]
 

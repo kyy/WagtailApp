@@ -4,7 +4,6 @@
 - django-debug-toolbar: <https://pypi.org/project/django-debug-toolbar/>
 - django-browser-reload: <https://pypi.org/project/django-browser-reload/>
 - whitenoise: <https://pypi.org/project/whitenoise/>
-- fontawesome-free: <https://pypi.org/project/fontawesome-free/>
 - mysql-connector-python: <https://pypi.org/project/mysql-connector-python/>
 - mysqlclient: <https://pypi.org/project/mysqlclient/>
 - wagtail-color-panel: <https://pypi.org/project/wagtail-color-panel/>
@@ -22,10 +21,15 @@ python -m venv /path/to/new/virtual/environment
 
 2. Create Git repo.
 3. Install MySQL Server: https://dev.mysql.com/downloads/installer/>
-4. RUN in project folder:
+4. RUN in:
 
+--> project folder:
 ```python 
 pip install -r requirements.txt
+```
+--> frontend folder:
+```python 
+npm install
 ```
 
 5. Configure 'db' (name, login) in 'db_start.py' for creating MySQL database and run script.
