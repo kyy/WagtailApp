@@ -1,0 +1,3 @@
+list of commands:
+npm install
+npm install --save my-dependency
