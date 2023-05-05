@@ -115,7 +115,7 @@ class MapBlock(StructBlock):
 
 class BrandsBlock(StructBlock):
     title = CharBlock(
-        default='Имя',
+        default='',
         label='Имя',
         required=False,
         max_length=128,

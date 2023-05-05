@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     "wagtailmedia",
     "django_extensions",
     "fontawesomefree",
+    "webpack_boilerplate",
 ]
 
 MIDDLEWARE = [
@@ -153,7 +154,12 @@ STATICFILES_FINDERS = [
 
 STATICFILES_DIRS = [
     os.path.join(PROJECT_DIR, "static"),
+    os.path.join(BASE_DIR, "frontend", "build"),
 ]
+
+WEBPACK_LOADER = {
+    'MANIFEST_FILE': os.path.join(BASE_DIR, "frontend/build/manifest.json"),
+}
 
 # ManifestStaticFilesStorage is recommended in production, to prevent outdated
 # JavaScript / CSS assets being served from cache (e.g. after a Wagtail upgrade).
