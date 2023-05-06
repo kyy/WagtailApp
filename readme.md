@@ -30,6 +30,7 @@ pip install -r requirements.txt
 --> frontend folder:
 ```python 
 npm install
+npm run watch
 ```
 
 5. Configure 'db' (name, login) in 'db_start.py' for creating MySQL database and run script.
