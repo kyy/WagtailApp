@@ -100,7 +100,7 @@ class MapBlock(StructBlock):
         default='<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2416.025752575022!2d27.'
                 '448263451715075!3d52.731727706084875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!'
                 '2sby!4v1682684391133!5m2!1sru!2sby"width="100%" height="320" style="border:0;" allowfullscr'
-                'een="" loading="lazy"referrerpolicy="no-referrer-when-downgrade"></iframe>',
+                'een="" loading="lazy"referrerpolicy="no-referrer-when-downgrade" title="Карта"></iframe>',
         label='<HTML>',
         required=False,
         help_text='Установите width=100% height=320'

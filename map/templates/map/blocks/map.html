@@ -1,5 +1,7 @@
 {% load wagtailcore_tags %}
 
-{% if not value.live %}
-    {{ value.html|richtext }}
-{% endif %}
+<div style="width: 100%; height: 320px;">
+    {% if not value.live %}
+        {{ value.html|richtext }}
+    {% endif %}
+</div>
