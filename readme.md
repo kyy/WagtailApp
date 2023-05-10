@@ -8,7 +8,6 @@
 - mysqlclient: <https://pypi.org/project/mysqlclient/>
 - wagtail-color-panel: <https://pypi.org/project/wagtail-color-panel/>
 - wagtailmedia: <https://pypi.org/project/wagtailmedia/>
-- wagtail-cache: <https://pypi.org/project/wagtail-cache/>
 - django-flags / wagtail-flags: <https://pypi.org/project/wagtail-flags/>
 - python-webpack-boilerplate: <https://python-webpack-boilerplate.readthedocs.io/en/latest/setup_with_django/>
 ### INSTALLING:
