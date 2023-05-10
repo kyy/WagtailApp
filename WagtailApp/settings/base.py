@@ -55,7 +55,7 @@ INSTALLED_APPS = [
 
     "flags",
     "wagtailflags",
-    "wagtailcache",
+    #"wagtailcache",
     "wagtailmedia",
     "django_extensions",
     "webpack_boilerplate",
