@@ -1,3 +1,4 @@
+https://python-webpack-boilerplate.readthedocs.io/en/latest/
 list of commands:
 npm install
 npm install --save my-dependency
