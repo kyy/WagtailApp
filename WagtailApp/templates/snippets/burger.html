@@ -2,7 +2,7 @@
 
 <nav id="navigation" class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{% pageurl page.get_site.root_page %}">
+        <a class="navbar-brand" href="/">
             <img src="{% static 'vendors/images/logo.png' %}" alt="logo" width="60">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -12,14 +12,11 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             {% if settings.navigation.NavigationMenuSetting.menu_items %}
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                {{ settings.navigation.NavigationMenuSetting.menu_items }}
-            </ul>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    {{ settings.navigation.NavigationMenuSetting.menu_items }}
+                </ul>
             {% endif %}
-            <form class="d-flex mt-3">
-                <input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-secondary " type="submit">Search</button>
-            </form>
+            {% include 'search/snippets/search_form.html' %}
         </div>
 
     </div>

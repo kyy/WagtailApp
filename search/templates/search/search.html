@@ -6,12 +6,9 @@
 {% block title %}Search{% endblock %}
 
 {% block content %}
-<h1>Search</h1>
+    <p></p>
+<h3>Результаты поиска</h3>
 
-<form action="{% url 'search' %}" method="get">
-    <input type="text" name="query"{% if search_query %} value="{{ search_query }}"{% endif %}>
-    <input type="submit" value="Search" class="button">
-</form>
 
 {% if search_results %}
 <ul>
@@ -33,6 +30,7 @@
 <a href="{% url 'search' %}?query={{ search_query|urlencode }}&amp;page={{ search_results.next_page_number }}">Next</a>
 {% endif %}
 {% elif search_query %}
-No results found
+    Не удалось ничего найти для запроса: <i>"{{ search_query }}"</i>
+    <p></p>
 {% endif %}
 {% endblock %}

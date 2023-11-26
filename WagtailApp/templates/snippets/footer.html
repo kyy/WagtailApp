@@ -1,7 +1,9 @@
 {% load static wagtailcore_tags wagtailsettings_tags %}
+{% wagtail_site as current_site %}
 
 <!-- Footer -->
-<footer class="text-center text-lg-start bg-light text-muted">
+
+<footer class="text-center text-lg-start bg-light text-muted p-1">
     <!-- Section: Social media -->
     {% if not settings.map.Map.brands_live and settings.map.Map.brands %}
         <section
@@ -21,7 +23,7 @@
         <!-- Section: Social media -->
     {% endif %}
     <!-- Section: Links  -->
-    <section class="">
+    <section>
         <div class="container text-center text-md-start mt-5">
             <!-- Grid row -->
             <div class="row mt-3">
@@ -29,9 +31,9 @@
                     <!-- Grid column -->
                     <div class="col-sm-6 mx-auto mb-4 d-lg-none">
 
-                        <h6 class="text-uppercase fw-bold mb-4">
+                        <h2 class="text-uppercase fw-bold mb-4">
                             Контакты
-                        </h6>
+                        </h2>
                         {% include 'map/contacts.html' %}
                         <p>
                         </p>
@@ -43,9 +45,9 @@
 
                 <!-- Grid column -->
                 <div class="col-sm-6 mx-auto mb-4 d-none d-lg-block">
-                    <h6 class="text-uppercase fw-bold mb-4">
+                    <p class="text-uppercase fw-bold mb-4">
                         О нас
-                    </h6>
+                    </p>
                     <p>
                         Индивидуальный предприниматель Иванов Иван Иванович
                     </p>
@@ -57,9 +59,9 @@
                 <!-- Grid column -->
                 <div class="col-sm-6 mx-auto mb-4">
                     <!-- Links -->
-                    <h6 class="text-uppercase fw-bold mb-4">
-                        Useful links
-                    </h6>
+                    <p class="text-uppercase fw-bold mb-4">
+                        ПОлезные ссылки
+                    </p>
                     <p>
                         <a href="#!" class="text-reset">Pricing</a>
                     </p>
@@ -84,7 +86,7 @@
     <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
         © {% now 'Y' %} Copyright:
         <a class="text-reset fw-bold"
-           href="{% pageurl page.get_site.root_page %}">WagtailApp</a>
+           href="/">{{ current_site.site_name }}</a>
     </div>
     <!-- Copyright -->
 </footer>

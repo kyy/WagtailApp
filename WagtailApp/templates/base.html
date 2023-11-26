@@ -30,21 +30,35 @@
     {% endif %}
 </head>
 <body class="{% block body_class %}{% endblock %}">
+
 {% block extra_css %}
     {# add extra stylesheets #}
 {% endblock %}
+
 {% block extra_js %}
     {# add extra javascript #}
 {% endblock %}
+
 {% wagtailuserbar %}
+
 {% include 'snippets/top.html' %}
+
 <div class="container">
+
     {% include 'snippets/burger.html' %}
+
     {% include 'snippets/breadcrumbs.html' %}
+
+    <div class="p-3">
     {% block content %}
     {% endblock %}
+    </div>
+
 </div>
+
 {% include 'snippets/map_contacts.html' %}
+
 {% include 'snippets/footer.html' %}
+
 </body>
 </html>
