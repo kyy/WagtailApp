@@ -1,3 +1,4 @@
+import os
 from .base import *
 from config_reader import config
 from db_start import go
@@ -33,7 +34,7 @@ DATABASES = {
         'ENGINE': go.engine,
         'NAME': go.name,
         'USER': go.user,
-        'PASSWORD': config.db_password.get_secret_value(),
+        'PASSWORD': os.getenv('db_password'),
         'HOST': 'localhost',
     },
 }

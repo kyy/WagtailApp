@@ -1,13 +1,4 @@
-from pydantic import BaseSettings, SecretStr
+from dotenv import load_dotenv
 
 
-class Settings(BaseSettings):
-    db_password: SecretStr
-
-
-    class Config:
-        env_file = '.env'
-        env_file_encoding = 'utf-8'
-
-
-config = Settings()
+config = load_dotenv('.env')
