@@ -16,3 +16,4 @@ wagtail-color-panel
 django-flags
 wagtail-flags
 python-webpack-boilerplate
+python-dotenv
