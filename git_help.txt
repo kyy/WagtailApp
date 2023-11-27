@@ -1,0 +1,6 @@
+https://stackoverflow.com/questions/56577184/github-pull-changes-from-a-template-repository
+
+1. git remote add template https://github.com/kyy/WagtailApp
+2. git fetch template
+3. git checkout <branch-to-merge-to>
+   git merge template/<branch-to-merge>
