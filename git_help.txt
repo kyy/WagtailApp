@@ -4,3 +4,13 @@ https://stackoverflow.com/questions/56577184/github-pull-changes-from-a-template
 2. git fetch template
 3. git checkout <branch-to-merge-to>
    git merge template/<branch-to-merge>
+--------------------------------------------
+https://qna.habr.com/q/1321404
+
+# Сохранить адрес шаблона в переменную template 
+git remote add template https://github.com/OWNER/TEMPLATE.git
+# Скачать все обновления
+git fetch template
+# Попробовать сделать слияние ветки BRANCH-NAME шаблона с нашей текущей веткой
+git merge --allow-unrelated-histories template/BRANCH-NAME
+---------------------------------------------
