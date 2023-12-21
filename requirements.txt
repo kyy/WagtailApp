@@ -4,8 +4,6 @@
 #
 #    pip-compile
 #
-annotated-types==0.6.0
-    # via pydantic
 anyascii==0.3.2
     # via wagtail
 arrow==1.3.0
@@ -36,13 +34,15 @@ colorama==0.4.6
     # via
     #   build
     #   click
+    #   pytest
+    #   tqdm
 cookiecutter==2.5.0
     # via python-webpack-boilerplate
 defusedxml==0.7.1
     # via willow
-distlib==0.3.7
+distlib==0.3.8
     # via virtualenv
-django==4.2.7
+django==5.0
     # via
     #   -r requirements.in
     #   django-browser-reload
@@ -50,6 +50,7 @@ django==4.2.7
     #   django-extensions
     #   django-filter
     #   django-flags
+    #   django-jquery-datatables
     #   django-modelcluster
     #   django-permissionedforms
     #   django-taggit
@@ -63,22 +64,28 @@ django-debug-toolbar==4.2.0
     # via -r requirements.in
 django-extensions==3.2.3
     # via -r requirements.in
-django-filter==23.4
+django-filter==23.5
     # via wagtail
 django-flags==5.0.13
     # via
     #   -r requirements.in
     #   wagtail-flags
+django-jquery-datatables==1.0.8
+    # via -r requirements.in
 django-modelcluster==6.1
     # via wagtail
 django-permissionedforms==0.1
     # via wagtail
+django-rest-framework==0.1.0
+    # via django-jquery-datatables
 django-taggit==4.0.0
     # via wagtail
 django-treebeard==4.7
     # via wagtail
 djangorestframework==3.14.0
-    # via wagtail
+    # via
+    #   django-rest-framework
+    #   wagtail
 draftjs-exporter==2.1.7
     # via wagtail
 et-xmlfile==1.1.0
@@ -89,16 +96,20 @@ filetype==1.2.0
     # via willow
 html5lib==1.1
     # via wagtail
-identify==2.5.32
+identify==2.5.33
     # via pre-commit
 idna==3.6
     # via requests
+iniconfig==2.0.0
+    # via pytest
 jinja2==3.1.2
     # via
     #   -r requirements.in
     #   cookiecutter
 l18n==2021.3
     # via wagtail
+lxml==4.9.4
+    # via -r requirements.in
 markdown-it-py==3.0.0
     # via rich
 markupsafe==2.1.3
@@ -107,36 +118,40 @@ mdurl==0.1.2
     # via markdown-it-py
 mysql-connector-python==8.2.0
     # via -r requirements.in
-mysqlclient==2.2.0
+mysqlclient==2.2.1
     # via -r requirements.in
 nodeenv==1.8.0
     # via pre-commit
+numpy==1.26.2
+    # via -r requirements.in
 openpyxl==3.1.2
     # via wagtail
 packaging==23.2
-    # via build
+    # via
+    #   build
+    #   pytest
 pillow==10.1.0
     # via
     #   pillow-heif
     #   wagtail
-pillow-heif==0.13.1
+pillow-heif==0.14.0
     # via willow
 pip-tools==7.3.0
     # via -r requirements.in
-platformdirs==4.0.0
+platformdirs==4.1.0
     # via virtualenv
-pre-commit==3.5.0
+pluggy==1.3.0
+    # via pytest
+pre-commit==3.6.0
     # via -r requirements.in
 protobuf==4.21.12
     # via mysql-connector-python
-pydantic[dotenv]==2.5.2
-    # via -r requirements.in
-pydantic-core==2.14.5
-    # via pydantic
 pygments==2.17.2
     # via rich
 pyproject-hooks==1.0.0
     # via build
+pytest==7.4.3
+    # via -r requirements.in
 python-dateutil==2.8.2
     # via arrow
 python-dotenv==1.0.0
@@ -157,6 +172,7 @@ pyyaml==6.0.1
 requests==2.31.0
     # via
     #   cookiecutter
+    #   django-jquery-datatables
     #   wagtail
 rich==13.7.0
     # via cookiecutter
@@ -175,19 +191,19 @@ telepath==0.3.1
     # via wagtail
 text-unidecode==1.3
     # via python-slugify
+tqdm==4.66.1
+    # via -r requirements.in
 types-python-dateutil==2.8.19.14
     # via arrow
-typing-extensions==4.8.0
-    # via
-    #   pydantic
-    #   pydantic-core
 tzdata==2023.3
     # via django
 urllib3==2.1.0
-    # via requests
-virtualenv==20.24.7
+    # via
+    #   django-jquery-datatables
+    #   requests
+virtualenv==20.25.0
     # via pre-commit
-wagtail==5.2.1
+wagtail==5.2.2
     # via
     #   -r requirements.in
     #   wagtail-color-panel
@@ -201,11 +217,11 @@ wagtailmedia==0.14.5
     # via -r requirements.in
 webencodings==0.5.1
     # via html5lib
-wheel==0.41.3
+wheel==0.42.0
     # via pip-tools
 whitenoise==6.6.0
     # via -r requirements.in
-willow[heif]==1.6.2
+willow[heif]==1.6.3
     # via
     #   wagtail
     #   willow

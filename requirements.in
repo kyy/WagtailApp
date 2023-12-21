@@ -6,8 +6,6 @@ django-browser-reload
 whitenoise
 Jinja2
 wagtail
-pydantic
-pydantic[dotenv]
 pre-commit
 mysql-connector-python
 mysqlclient
@@ -17,3 +15,8 @@ django-flags
 wagtail-flags
 python-webpack-boilerplate
 python-dotenv
+django-jquery-datatables
+tqdm
+pytest
+lxml
+numpy
